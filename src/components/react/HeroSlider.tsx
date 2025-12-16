@@ -52,15 +52,27 @@ export default function HeroSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < lastScrollY || currentScrollY < 10) {
+        // Scrolling up or at the top - show header
+        setVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past threshold - hide header
+        setVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   useEffect(() => {
     if (typeof window === "undefined" || !window.matchMedia) return;
@@ -90,8 +102,10 @@ export default function HeroSlider() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Header - Blanc au repos avec effet au scroll */}
-      <div className="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300">
+      {/* Header - Blanc avec effet de disparition au scroll */}
+      <div className={`fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md transition-transform duration-300 ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      }`}>
         <header className="container mx-auto flex items-center justify-between px-6 py-4 sm:px-10 sm:py-5">
           {/* Logo et Navigation - Alignés à gauche */}
           <div className="flex items-center gap-10">

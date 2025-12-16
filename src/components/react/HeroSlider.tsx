@@ -38,49 +38,13 @@ const slides: Slide[] = [
     caption: "Experience unmatched comfort with our exclusive stays",
     alt: "Murmullo hotel luxury",
   },
-  {
-    src: "/images/hero/el-murmullo5.jpg",
-    title: "Luxury Living In Every Detail",
-    caption: "Discover the perfect blend of luxury and comfort",
-    alt: "Murmullo hotel view",
-  },
-  {
-    src: "/images/hero/el-murmullo6.jpg",
-    title: "The Essence Of Hospitality",
-    caption: "Your haven for relaxation and rejuvenation",
-    alt: "Murmullo hotel relaxation",
-  },
-  {
-    src: "/images/hero/el-murmullo7.jpg",
-    title: "Rooted In Timeless Traditions",
-    caption: "Experience the finest luxury hospitality",
-    alt: "Murmullo hotel tradition",
-  },
-  {
-    src: "/images/hero/el-murmullo8.jpg",
-    title: "Exceptional Care Awaiting",
-    caption: "Limited-time offers on premium rooms",
-    alt: "Murmullo hotel rooms",
-  },
-  {
-    src: "/images/hero/el-murmullo9.jpg",
-    title: "The Heart Of Hospitality",
-    caption: "Immerse yourself in luxury and comfort",
-    alt: "Murmullo hotel hospitality",
-  },
-  {
-    src: "/images/hero/el-murmullo10.jpg",
-    title: "Luxury Living In Every Detail",
-    caption: "Book now for exclusive deals on luxury suites",
-    alt: "Murmullo hotel luxury suites",
-  },
 ];
 
 const SLIDE_DURATION = 6500;
 const navLinks = [
-  { label: "Maison", href: "#maison" },
+  { label: "Home", href: "#home" },
   { label: "Suites", href: "#suites" },
-  { label: "Galerie", href: "#galerie" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -123,9 +87,11 @@ export default function HeroSlider() {
           {/* Logo et Navigation - Alignés à gauche */}
           <div className="flex items-center gap-10">
             <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sand text-ink font-semibold tracking-[0.14em] text-lg">
-                M
-              </div>
+              <img 
+                src="/logo/logo.jpg" 
+                alt="Murmullo Logo" 
+                className="h-12 w-12 rounded-full object-cover"
+              />
               <div className="leading-tight">
                 <p className="text-base uppercase tracking-[0.18em] text-sand font-semibold">Murmullo</p>
                 <p className="text-xs text-sand/70">Casa entre jungle & mer</p>
@@ -148,7 +114,7 @@ export default function HeroSlider() {
           {/* Bouton Contact à droite */}
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-sand px-5 py-2.5 text-sm font-semibold text-ink shadow-soft transition hover:-translate-y-0.5 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand"
+            Book Nowe="inline-flex items-center gap-2 rounded-full bg-sand px-5 py-2.5 text-sm font-semibold text-ink shadow-soft transition hover:-translate-y-0.5 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand"
           >
             Réserver
           </a>

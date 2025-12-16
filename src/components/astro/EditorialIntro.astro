@@ -8,30 +8,7 @@ const { id } = Astro.props as Props;
 
 <section id={id} class="section-shell py-16 sm:py-20 lg:py-28">
   <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-    <!-- Images à gauche comme Zotela -->
-    <div class="grid gap-6 grid-cols-2">
-      <div class="space-y-6">
-        <img 
-          src="/images/gallery-1.webp" 
-          alt="Murmullo interior" 
-          class="w-full h-64 object-cover rounded-lg shadow-md"
-        />
-        <img 
-          src="/images/gallery-2.webp" 
-          alt="Murmullo details" 
-          class="w-full h-80 object-cover rounded-lg shadow-md"
-        />
-      </div>
-      <div class="pt-12">
-        <img 
-          src="/images/gallery-3.webp" 
-          alt="Murmullo architecture" 
-          class="w-full h-96 object-cover rounded-lg shadow-md"
-        />
-      </div>
-    </div>
-
-    <!-- Texte à droite -->
+    <!-- Texte à gauche -->
     <div class="space-y-6">
       <p class="text-sm uppercase tracking-[0.14em] text-dusk/70">Maison Murmullo</p>
       <h2 class="text-4xl leading-[1.05] sm:text-5xl lg:text-6xl font-serif">
@@ -47,6 +24,29 @@ const { id } = Astro.props as Props;
         piscine quand le soleil ralentit. Ici, tout murmure : un rythme lent, une cuisine attentive, des soirées éclairées
         à la bougie. Rien de spectaculaire, seulement la sensation d'être attendu.
       </p>
+    </div>
+
+    <!-- Images à droite -->
+    <div class="grid gap-6 grid-cols-2">
+      <div class="space-y-6">
+        <img 
+          src="/images/hero/sous-hero/el-murmullo1.jpg" 
+          alt="Murmullo interior" 
+          class="w-full h-64 object-cover rounded-lg shadow-md"
+        />
+        <img 
+          src="/images/hero/sous-hero/el-murmullo2.jpg" 
+          alt="Murmullo details" 
+          class="w-full h-80 object-cover rounded-lg shadow-md"
+        />
+      </div>
+      <div class="pt-12">
+        <img 
+          src="/images/hero/sous-hero/el-murmullo3.jpg" 
+          alt="Murmullo architecture" 
+          class="w-full h-96 object-cover rounded-lg shadow-md"
+        />
+      </div>
     </div>
   </div>
 

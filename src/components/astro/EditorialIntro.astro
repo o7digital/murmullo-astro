@@ -8,44 +8,46 @@ interface Props {
 const { id } = Astro.props as Props;
 ---
 
-<section id={id} class="section-shell py-16 sm:py-20 lg:py-28">
-  <div class="grid gap-16 lg:grid-cols-[1fr,2fr] lg:gap-20 items-center">
-    <!-- Texte à gauche -->
-    <div class="space-y-6">
-      <p class="text-sm uppercase tracking-[0.14em] text-dusk/70">About Murmullo</p>
-      <h2 class="text-4xl leading-[1.05] sm:text-5xl lg:text-6xl font-serif">
-        A sanctuary that whispers, between jungle and sea.
-      </h2>
-      <p class="text-lg leading-relaxed text-ink/80">
-        Murmullo is a hidden boutique hotel nestled between the jungle and the sea, designed for travelers seeking tranquility without compromising beauty. Each suite opens onto soft light, mineral textures, and discreet service.
-      </p>
-      <p class="text-lg leading-relaxed text-ink/80">
-        Wake up to the ocean's breath, dine on a fragrant patio, surrender to the pool as the sun slows down. Here, everything whispers: a slow rhythm, attentive cuisine, candlelit evenings. Nothing spectacular, just the feeling of being awaited.
-      </p>
+<section id={id} class="py-16 sm:py-20 lg:py-28">
+  <div class="max-w-[2100px] mx-auto pl-4 pr-0">
+    <div class="grid gap-1 lg:grid-cols-[900px,1fr] items-center">
+      <!-- Texte à gauche - largeur fixe -->
+      <div class="space-y-6 pr-4">
+        <h1 class="text-2xl sm:text-3xl uppercase tracking-[0.10em] text-dusk font-semibold">About Murmullo</h1>
+        <h2 class="text-4xl leading-[1.05] sm:text-5xl lg:text-6xl font-serif">
+          A sanctuary that whispers, between jungle and sea.
+        </h2>
+        <p class="text-lg leading-relaxed text-ink/80">
+          Murmullo is a hidden boutique hotel nestled between the jungle and the sea, designed for travelers seeking tranquility without compromising beauty. Each suite opens onto soft light, mineral textures, and discreet service.
+        </p>
+        <p class="text-lg leading-relaxed text-ink/80">
+          Wake up to the ocean's breath, dine on a fragrant patio, surrender to the pool as the sun slows down. Here, everything whispers: a slow rhythm, attentive cuisine, candlelit evenings. Nothing spectacular, just the feeling of being awaited.
+        </p>
+      </div>
+
+      <!-- Slider à droite - prend tout l'espace restant -->
+      <div class="pr-0">
+        <AboutSlider client:visible />
+      </div>
     </div>
 
-    <!-- Slider à droite -->
-    <div>
-      <AboutSlider client:visible />
-    </div>
-  </div>
-
-  <!-- Cartes avec les 3 services en dessous -->
-  <div class="mt-16 grid gap-6 sm:grid-cols-3">
-    <div class="rounded-2xl bg-mist/60 p-8 shadow-soft hover:shadow-md transition-shadow">
-      <p class="text-sm uppercase tracking-[0.12em] text-dusk/70">Suites</p>
-      <p class="mt-3 text-2xl font-semibold text-dusk">10 suites with private patios</p>
-      <p class="mt-3 text-sm leading-relaxed text-ink/70">Linen bedding, natural ventilation, guaranteed silence.</p>
-    </div>
-    <div class="rounded-2xl bg-mist/60 p-8 shadow-soft hover:shadow-md transition-shadow">
-      <p class="text-sm uppercase tracking-[0.12em] text-dusk/70">Cuisine</p>
-      <p class="mt-3 text-2xl font-semibold text-dusk">Solar table</p>
-      <p class="mt-3 text-sm leading-relaxed text-ink/70">Daily menu, local products, light wines served in the garden.</p>
-    </div>
-    <div class="rounded-2xl bg-mist/60 p-8 shadow-soft hover:shadow-md transition-shadow">
-      <p class="text-sm uppercase tracking-[0.12em] text-dusk/70">Wellness</p>
-      <p class="mt-3 text-2xl font-semibold text-dusk">Water rituals</p>
-      <p class="mt-3 text-sm leading-relaxed text-ink/70">Heated pool, citrus steam bath, open-air massages.</p>
+    <!-- Cartes avec les 3 services en dessous -->
+    <div class="mt-16 grid gap-6 sm:grid-cols-3">
+      <div class="rounded-2xl bg-mist/60 p-8 shadow-soft hover:shadow-md transition-shadow">
+        <p class="text-sm uppercase tracking-[0.12em] text-dusk/70">Suites</p>
+        <p class="mt-3 text-2xl font-semibold text-dusk">10 suites with private patios</p>
+        <p class="mt-3 text-sm leading-relaxed text-ink/70">Linen bedding, natural ventilation, guaranteed silence.</p>
+      </div>
+      <div class="rounded-2xl bg-mist/60 p-8 shadow-soft hover:shadow-md transition-shadow">
+        <p class="text-sm uppercase tracking-[0.12em] text-dusk/70">Cuisine</p>
+        <p class="mt-3 text-2xl font-semibold text-dusk">Solar table</p>
+        <p class="mt-3 text-sm leading-relaxed text-ink/70">Daily menu, local products, light wines served in the garden.</p>
+      </div>
+      <div class="rounded-2xl bg-mist/60 p-8 shadow-soft hover:shadow-md transition-shadow">
+        <p class="text-sm uppercase tracking-[0.12em] text-dusk/70">Wellness</p>
+        <p class="mt-3 text-2xl font-semibold text-dusk">Water rituals</p>
+        <p class="mt-3 text-sm leading-relaxed text-ink/70">Heated pool, citrus steam bath, open-air massages.</p>
+      </div>
     </div>
   </div>
 </section>

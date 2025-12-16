@@ -90,41 +90,25 @@ export default function HeroSlider() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Header - Transparent avec effet au scroll comme Zotela */}
-      <div className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-sm shadow-md" : "bg-transparent"
-      }`}>
+      {/* Header - Blanc au repos avec effet au scroll */}
+      <div className="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300">
         <header className="container mx-auto flex items-center justify-between px-6 py-4 sm:px-10 sm:py-5">
           {/* Logo et Navigation - Alignés à gauche */}
           <div className="flex items-center gap-10">
-            <div className="flex items-center gap-3">
-              <img 
-                src="/logo/logo.jpg" 
-                alt="Murmullo Logo" 
-                className="h-12 w-auto object-contain"
-              />
-              <div className="leading-tight">
-                <p className={`text-base uppercase tracking-[0.18em] font-semibold transition-colors ${
-                  scrolled ? "text-ink" : "text-white"
-                }`}>Murmullo</p>
-                <p className={`text-xs transition-colors ${
-                  scrolled ? "text-ink/70" : "text-white/70"
-                }`}>Casa entre jungle & mer</p>
-              </div>
-            </div>
-            <nav className="hidden items-center gap-8 text-sm font-medium lg:flex ml-20">
+            <img 
+              src="/logo/logo.jpg" 
+              alt="Murmullo Logo" 
+              className="h-12 w-auto object-contain"
+            />
+            <nav className="hidden items-center gap-8 text-sm font-bold lg:flex ml-20">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`group relative pb-1 uppercase tracking-wider transition-colors ${
-                    scrolled ? "text-ink/85 hover:text-ink" : "text-white/85 hover:text-white"
-                  }`}
+                  className="group relative pb-1 uppercase tracking-wider transition-colors text-ink hover:text-ink/70"
                 >
                   {link.label}
-                  <span className={`absolute inset-x-0 -bottom-1 h-[1px] scale-x-0 transition group-hover:scale-x-100 ${
-                    scrolled ? "bg-ink/70" : "bg-white/70"
-                  }`}></span>
+                  <span className="absolute inset-x-0 -bottom-1 h-[1px] scale-x-0 transition group-hover:scale-x-100 bg-ink/70"></span>
                 </a>
               ))}
             </nav>

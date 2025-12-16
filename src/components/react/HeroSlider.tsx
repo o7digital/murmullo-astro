@@ -101,7 +101,7 @@ export default function HeroSlider() {
               <img 
                 src="/logo/logo.jpg" 
                 alt="Murmullo Logo" 
-                className="h-12 w-12 rounded-full object-cover"
+                className="h-12 w-auto object-contain"
               />
               <div className="leading-tight">
                 <p className={`text-base uppercase tracking-[0.18em] font-semibold transition-colors ${
@@ -112,7 +112,7 @@ export default function HeroSlider() {
                 }`}>Casa entre jungle & mer</p>
               </div>
             </div>
-            <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
+            <nav className="hidden items-center gap-8 text-sm font-medium lg:flex ml-20">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -133,11 +133,7 @@ export default function HeroSlider() {
           {/* Bouton Contact à droite */}
           <a
             href="#contact"
-            className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
-              scrolled 
-                ? "bg-ink text-white hover:bg-ink/90 focus-visible:outline-ink" 
-                : "bg-white text-ink hover:bg-white/90 focus-visible:outline-white"
-            }`}
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold uppercase transition-all hover:-translate-y-0.5 bg-white text-ink hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             Book Now
           </a>

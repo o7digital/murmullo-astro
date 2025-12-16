@@ -28,12 +28,12 @@ export default function AboutSlider() {
 
   return (
     <div
-      className="relative h-full w-full overflow-hidden rounded-2xl shadow-2xl"
+      className="relative h-full w-full overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
       {/* Images du slider */}
-      <div className="relative h-[600px] lg:h-[700px]">
+      <div className="relative h-full w-full">
         {images.map((src, index) => (
           <img
             key={src}

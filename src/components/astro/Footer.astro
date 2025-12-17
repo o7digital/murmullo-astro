@@ -11,34 +11,45 @@ const { id } = Astro.props as Props;
     <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
       <!-- Logo centré en haut sur mobile, colonne 1 sur desktop -->
       <div class="flex justify-center md:justify-start">
-        <div class="w-32 h-32 flex items-center justify-center">
+        <div class="w-48 h-48 flex items-center justify-center">
           <img src="/logo/logo.jpg" alt="Murmullo" class="w-full h-full object-contain" />
         </div>
       </div>
 
-      <!-- Useful Links -->
+      <!-- El Murmullo Links -->
       <div>
-        <h3 class="text-lg font-semibold text-dusk mb-4">Useful Links</h3>
+        <h3 class="text-lg font-semibold text-dusk mb-4">El Murmullo</h3>
         <ul class="space-y-2">
           <li><a href="/" class="text-ink/70 hover:text-dusk transition">Home</a></li>
-          <li><a href="#maison" class="text-ink/70 hover:text-dusk transition">About us</a></li>
-          <li><a href="/suites" class="text-ink/70 hover:text-dusk transition">Suites</a></li>
-          <li><a href="/gallery" class="text-ink/70 hover:text-dusk transition">Gallery</a></li>
+          <li><a href="#suites" class="text-ink/70 hover:text-dusk transition">Suites</a></li>
+          <li><a href="#activities" class="text-ink/70 hover:text-dusk transition">Activities</a></li>
+          <li><a href="#contact" class="text-ink/70 hover:text-dusk transition">Contact</a></li>
+          <li><a href="/privacy" class="text-ink/70 hover:text-dusk transition">Privacy Notice</a></li>
         </ul>
       </div>
 
       <!-- Get In Touch -->
       <div>
         <h3 class="text-lg font-semibold text-dusk mb-4">Get In Touch</h3>
-        <div class="space-y-2 text-ink/70">
-          <p>Tulum, Quintana Roo</p>
-          <p>México 77780</p>
+        <div class="space-y-3 text-ink/70 text-sm">
+          <p>
+            <a href="https://maps.app.goo.gl/nstPh6dN5pwWDLXB7" target="_blank" class="hover:text-dusk transition">
+              Camino Escénico at Playa La Ropa S / N, La Ropa Beach, 40880 Zihuatanejo, Guerrero, México
+            </a>
+          </p>
           <p class="pt-2">
-            <a href="mailto:info@murmullo.com" class="hover:text-dusk transition">info@murmullo.com</a>
+            Reservations: <a href="tel:+527555557000" class="hover:text-dusk transition">+52 755 555 7000</a>
           </p>
           <p>
-            <a href="tel:+529841234567" class="hover:text-dusk transition">+52 984 123 4567</a>
+            Sales & Reservations Whatsapp: <a href="tel:+525525641838" class="hover:text-dusk transition">+52 55 2564 1838</a>
           </p>
+          <p>
+            Front Desk: <a href="tel:+527555557030" class="hover:text-dusk transition">+52 755 555 7030</a> (24 hrs)
+          </p>
+          <p class="pt-2">
+            <a href="mailto:sales.reservations@lacasaquecanta.com" class="hover:text-dusk transition">sales.reservations@lacasaquecanta.com</a>
+          </p>
+          <p class="text-xs">Sales & Reservations Business Hours: 9 AM to 6 PM (CST) – Closed on Sundays</p>
         </div>
         <div class="flex gap-4 mt-4">
           <a href="#" class="text-ink/70 hover:text-dusk transition" aria-label="Facebook">

@@ -44,6 +44,8 @@ const SLIDE_DURATION = 6500;
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Suites", href: "#suites", hasMegamenu: true },
+  { label: "Embraced by the Sea", href: "#embraced-sea" },
+  { label: "Fusion Cuisine", href: "#fusion-cuisine" },
   { label: "Activities", href: "#activities" },
   { label: "Contact", href: "#contact" },
 ];

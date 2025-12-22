@@ -7,7 +7,6 @@ const images = [
   "/images/jeremy-bishop-voilier.webp",
   "/images/hiroko-yoshii.webp",
   "/images/yoga.webp",
-  "/images/langosta.webp",
   "/images/mexicana.webp",
 ];
 

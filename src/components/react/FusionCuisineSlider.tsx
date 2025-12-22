@@ -77,7 +77,7 @@ export default function FusionCuisineSlider() {
         {/* Grid Layout: Texte à gauche, Slider à droite */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Texte à gauche */}
-          <div className="max-w-xl -ml-32 lg:-ml-48">
+          <div className="max-w-xl -ml-24 lg:-ml-40">
             <span className="font-editorial text-5xl md:text-6xl lg:text-7xl italic text-ink/20 block mb-2">
               Fusion Cuisine
             </span>
@@ -89,9 +89,6 @@ export default function FusionCuisineSlider() {
             <p className="text-base text-ink/70 leading-relaxed mb-8">
               Savor the fresh regional dishes prepared instantly with high quality products illustrating our Mexican gastronomy with European influences.
             </p>
-            <button className="px-10 py-3.5 bg-transparent text-ink border-2 border-ink hover:bg-ink hover:text-sand transition-all duration-300 font-bold tracking-wider text-sm">
-              BOOK NOW
-            </button>
           </div>
 
           {/* Slider horizontal à droite */}

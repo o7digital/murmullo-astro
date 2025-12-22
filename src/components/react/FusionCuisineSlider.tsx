@@ -7,8 +7,6 @@ const dishes = [
   { name: "Beef Carpaccio", image: "/images/cuisines/cuisine6.jpg" },
   { name: "Seared Sea Bass", image: "/images/cuisines/cusine2.jpg" },
   { name: "Filet Mignon", image: "/images/cuisines/luxury-hotel-ixtapa-zihuatanejo-mexico-1.jpg" },
-  { name: "Mushroom Risotto", image: "/images/home/luxury-romantic-boutique-hotel-zihuatanejo-ixtapa-mexico-1.jpg" },
-  { name: "Maple Glazed Duck", image: "/images/home/luxury-romantic-boutique-hotel-zihuatanejo-ixtapa-mexico-2.jpg" },
 ];
 
 export default function FusionCuisineSlider() {
@@ -79,7 +77,7 @@ export default function FusionCuisineSlider() {
         {/* Grid Layout: Texte à gauche, Slider à droite */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Texte à gauche */}
-          <div className="max-w-xl -ml-56 lg:-ml-72">
+          <div className="max-w-xl -ml-32 lg:-ml-48">
             <span className="font-editorial text-5xl md:text-6xl lg:text-7xl italic text-ink/20 block mb-2">
               Fusion Cuisine
             </span>

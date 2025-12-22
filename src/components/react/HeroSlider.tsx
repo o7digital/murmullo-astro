@@ -202,7 +202,7 @@ export default function HeroSlider() {
           
           {/* Bouton Contact à droite */}
           <a
-            href="/contact#contact-form"
+            href="https://be.synxis.com/?adult=1&arrive=2025-12-22&chain=22402&child=0&currency=USD&depart=2025-12-23&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=MUR&rooms=1&src=24C"
             className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold uppercase transition-all hover:-translate-y-0.5 bg-white text-ink hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             Book Now

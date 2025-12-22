@@ -12,6 +12,7 @@ export default {
       },
       fontFamily: {
         display: ['"Playfair Display"', "serif"],
+        script: ['"WindSong"', "cursive"],
         sans: ['"Sora"', "system-ui", "sans-serif"],
       },
       letterSpacing: {

@@ -57,6 +57,11 @@ const structuredData = {
   preloadImages={preloadImages}
   structuredData={structuredData}
 >
+  <script is:inline>
+    if (window.location.hash && window.location.hash.startsWith("#contact")) {
+      window.location.replace("/contact");
+    }
+  </script>
   <section class="relative h-screen">
     <HeroSlider client:visible />
   </section>

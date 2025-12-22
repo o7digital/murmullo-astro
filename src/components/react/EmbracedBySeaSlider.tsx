@@ -47,7 +47,7 @@ export default function EmbracedBySeaSlider() {
               onMouseLeave={() => setActiveIndex(null)}
             >
               {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-4">
                 <img
                   src={feature.url}
                   alt={feature.title}
@@ -56,6 +56,16 @@ export default function EmbracedBySeaSlider() {
                   }`}
                   loading="lazy"
                 />
+              </div>
+
+              {/* Titre et description */}
+              <div className="text-center">
+                <h3 className="font-editorial text-2xl text-ink mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-ink/70 text-sm leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             </div>
           ))}

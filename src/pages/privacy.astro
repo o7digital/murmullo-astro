@@ -7,37 +7,55 @@ const description = "Privacy Notice and Data Protection Policy for El Murmullo H
 
 <BaseLayout title={title} description={description}>
   <!-- Header avec logo fixe -->
-  <div class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
-    <header class="container mx-auto flex items-center justify-between px-6 py-4 sm:px-10 sm:py-5">
-      <a href="/">
-        <img 
-          src="/logo/logo.jpg" 
-          alt="Murmullo Logo" 
-          class="h-12 w-auto object-contain"
-        />
-      </a>
-      <nav class="hidden items-center gap-8 text-sm font-bold lg:flex">
-        <a href="/#home" class="uppercase tracking-wider transition-colors text-ink hover:text-ink/70">Home</a>
-        <a href="/#suites" class="uppercase tracking-wider transition-colors text-ink hover:text-ink/70">Suites</a>
-        <a href="/#activities" class="uppercase tracking-wider transition-colors text-ink hover:text-ink/70">Activities</a>
-        <a href="/#contact" class="uppercase tracking-wider transition-colors text-ink hover:text-ink/70">Contact</a>
-      </nav>
-      <a
-        href="#contact"
-        class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold uppercase transition-all hover:-translate-y-0.5 bg-white text-ink hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white border border-ink/20"
-      >
-        Book Now
-      </a>
-    </header>
+  <div id="header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+    <div class="relative bg-white/95 backdrop-blur-sm">
+      <header class="container mx-auto flex items-center justify-between px-6 py-4 sm:px-10 sm:py-5">
+        <a href="/">
+          <img 
+            src="/logo/logo.jpg" 
+            alt="Murmullo Logo" 
+            class="h-12 w-auto object-contain"
+          />
+        </a>
+        <nav class="hidden items-center gap-8 text-sm font-bold lg:flex">
+          <a href="/#home" class="uppercase tracking-wider transition-colors text-ink hover:text-ink/70">Home</a>
+          <a href="/#suites" class="uppercase tracking-wider transition-colors text-ink hover:text-ink/70">Suites</a>
+          <a href="/#activities" class="uppercase tracking-wider transition-colors text-ink hover:text-ink/70">Activities</a>
+          <a href="/#contact" class="uppercase tracking-wider transition-colors text-ink hover:text-ink/70">Contact</a>
+        </nav>
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold uppercase transition-all hover:-translate-y-0.5 bg-white text-ink hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white border border-ink/20"
+        >
+          Book Now
+        </a>
+      </header>
+    </div>
+    
+    <!-- Dégradé sombre au scroll sous le header -->
+    <div id="gradient-overlay" class="absolute top-full left-0 right-0 h-40 bg-gradient-to-b from-black/30 via-black/15 to-transparent pointer-events-none opacity-0 transition-opacity duration-500"></div>
   </div>
 
   <!-- Contenu de la page -->
-  <main class="pt-32 pb-20 bg-sand">
-    <div class="max-w-4xl mx-auto px-6">
+  <main class="pt-32 pb-20 bg-sand relative overflow-hidden">
+    <!-- Logo watermark en arrière-plan avec dégradé -->
+    <div class="fixed inset-0 z-0 flex items-center justify-center pointer-events-none">
+      <div class="relative w-[1600px] h-[1600px]">
+        <img 
+          src="/logo/logo-watermark.png" 
+          alt="" 
+          class="w-full h-full object-contain opacity-[0.25]"
+        />
+        <!-- Dégradé qui s'estompe vers le bas -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent from-40% via-sand/50 via-70% to-sand"></div>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
       <h1 class="text-5xl sm:text-6xl font-serif text-dusk mb-8">Privacy Notice</h1>
       
       <div class="prose prose-lg max-w-none">
-        <div class="bg-white rounded-2xl p-8 shadow-soft space-y-6 text-ink/80">
+        <div class="space-y-6 text-ink/80">
           <p class="text-lg leading-relaxed">
             In "El Murmullo" (hereinafter CASACANTA ZIHUA S.A. de C.V.) we are aware of the importance of maintaining the confidentiality of personal and sensitive information of our guests and clients. We are committed to protecting your information and privacy in accordance with the Federal Law on Protection of Personal Data Held by Private Parties (Mexico), the General Data Protection Regulation (GDPR) of the European Union, and the California Consumer Privacy Act (CCPA) in the United States. Below, we provide important information regarding the collection and use of personal data.
           </p>
@@ -119,5 +137,25 @@ const description = "Privacy Notice and Data Protection Policy for El Murmullo H
         </div>
       </div>
     </div>
+  </main>
+</BaseLayout>
+
+<script>
+  // Effet de dégradé au scroll sous le header
+  const header = document.getElementById('header');
+  const gradientOverlay = document.getElementById('gradient-overlay');
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    
+    if (scrolled > 50) {
+      gradientOverlay?.classList.add('opacity-100');
+      header?.classList.add('shadow-lg');
+    } else {
+      gradientOverlay?.classList.remove('opacity-100');
+      header?.classList.remove('shadow-lg');
+    }
+  });
+</script>
   </main>
 </BaseLayout>

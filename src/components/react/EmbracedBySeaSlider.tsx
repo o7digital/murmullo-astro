@@ -22,7 +22,7 @@ export default function EmbracedBySeaSlider() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section id="embraced-sea" className="relative py-4 md:py-6 bg-sand">
+    <section id="embraced-sea" className="relative py-6 md:py-8 bg-sand">
       <div className="container mx-auto px-6">
         {/* En-tête de section */}
         <div className="max-w-4xl mx-auto text-center mb-8">

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const dishes = [
   { name: "Mushroom Arancini", image: "/images/cuisines/9.jpg" },
@@ -10,66 +10,10 @@ const dishes = [
 ];
 
 export default function FusionCuisineSlider() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-scroll effect
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    let scrollSpeed = 10; // pixels per frame - vitesse augmentée
-    let animationFrameId: number;
-
-    const scroll = () => {
-      if (isDragging) {
-        animationFrameId = requestAnimationFrame(scroll);
-        return;
-      }
-
-      container.scrollLeft += scrollSpeed;
-      
-      // Reset scroll when reaching the end for seamless loop
-      if (container.scrollLeft >= container.scrollWidth / 3) {
-        container.scrollLeft = 0;
-      }
-      
-      animationFrameId = requestAnimationFrame(scroll);
-    };
-
-    animationFrameId = requestAnimationFrame(scroll);
-
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [isDragging]);
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    setStartX(e.pageX - (scrollContainerRef.current?.offsetLeft || 0));
-    setScrollLeft(scrollContainerRef.current?.scrollLeft || 0);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - (scrollContainerRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 2;
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-  };
-
-  // Duplicate dishes for seamless loop
-  const allDishes = [...dishes, ...dishes, ...dishes];
+  // Duplicate dishes EXACTLY 2 times for seamless infinite loop
+  const allDishes = [...dishes, ...dishes];
 
   return (
     <section id="fusion-cuisine" className="relative py-20 md:py-32 bg-white overflow-hidden">
@@ -92,15 +36,12 @@ export default function FusionCuisineSlider() {
           </div>
 
           {/* Slider horizontal à droite */}
-          <div className="relative -ml-56 -mr-64 lg:-ml-80 lg:-mr-96">
+          <div className="relative -ml-56 -mr-64 lg:-ml-80 lg:-mr-96 overflow-hidden">
             <div
-              ref={scrollContainerRef}
-              className="flex gap-6 overflow-x-scroll scrollbar-hide cursor-grab active:cursor-grabbing"
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-              onMouseLeave={handleMouseLeave}
-              style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
+              className="flex gap-6"
+              style={{ animation: isPaused ? 'none' : 'scroll 10s linear infinite' }}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
             >
               {allDishes.map((dish, index) => (
                 <div
@@ -128,6 +69,17 @@ export default function FusionCuisineSlider() {
           </div>
         </div>
       </div>
+      
+      <style>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 }

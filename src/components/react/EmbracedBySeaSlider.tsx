@@ -2,17 +2,17 @@ import { useState } from "react";
 
 const seaFeatures = [
   {
-    url: "/images/embraced/embraced1.jpg",
+    url: "/images/embraced/embraced1.webp",
     title: "Vues Océaniques",
     description: "Admirez les vues imprenables sur l'océan Pacifique depuis chaque coin de notre propriété.",
   },
   {
-    url: "/images/embraced/embraced2.jpg",
+    url: "/images/embraced/embraced2.webp",
     title: "Accès Plage Privée",
     description: "Profitez d'un accès direct à des plages vierges et des eaux cristallines.",
   },
   {
-    url: "/images/embraced/embraced3.jpg",
+    url: "/images/embraced/embraced3.webp",
     title: "Terrasses Panoramiques",
     description: "Détendez-vous sur nos terrasses privées avec des couchers de soleil à couper le souffle.",
   },

@@ -1,12 +1,12 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const dishes = [
-  { name: "Mushroom Arancini", image: "/images/cuisines/9.jpg" },
-  { name: "Caviar Blinis", image: "/images/cuisines/10.jpg" },
-  { name: "Lobster Bisque", image: "/images/cuisines/cuisine5.jpg" },
-  { name: "Beef Carpaccio", image: "/images/cuisines/cuisine6.jpg" },
-  { name: "Seared Sea Bass", image: "/images/cuisines/cusine2.jpg" },
-  { name: "Filet Mignon", image: "/images/cuisines/luxury-hotel-ixtapa-zihuatanejo-mexico-1.jpg" },
+  { name: "Mushroom Arancini", image: "/images/cuisines/9.webp" },
+  { name: "Caviar Blinis", image: "/images/cuisines/10.webp" },
+  { name: "Lobster Bisque", image: "/images/cuisines/cuisine5.webp" },
+  { name: "Beef Carpaccio", image: "/images/cuisines/cuisine6.webp" },
+  { name: "Seared Sea Bass", image: "/images/cuisines/cusine2.webp" },
+  { name: "Filet Mignon", image: "/images/cuisines/luxury-hotel-ixtapa-zihuatanejo-mexico-1.webp" },
 ];
 
 export default function FusionCuisineSlider() {

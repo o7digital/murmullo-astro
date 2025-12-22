@@ -4,13 +4,16 @@ import HeroSlider from "@/components/react/HeroSlider";
 import EditorialIntro from "@/components/astro/EditorialIntro.astro";
 import EmbracedBySeaSlider from "@/components/react/EmbracedBySeaSlider";
 import FusionCuisineSlider from "@/components/react/FusionCuisineSlider";
-import ActivitiesSection from "@/components/astro/ActivitiesSection.astro";
 
 const title = "Murmullo Casa • Maison-hôtel entre jungle et mer";
 const description =
   "Maison-hôtel intimiste sur la Riviera Maya : suites baignées de lumière, piscines lentes, cuisine solaire et hospitalité discrète.";
-const ogImage = "/images/hero-1.webp";
-const preloadImages = ["/images/hero-1.webp", "/images/hero-2.webp", "/images/hero-3.webp"];
+const ogImage = "/images/hero/el-murmullo0.webp";
+const preloadImages = [
+  "/images/hero/el-murmullo0.webp",
+  "/images/hero/el-murmullo1.webp",
+  "/images/hero/el-murmullo2.webp",
+];
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -20,9 +23,9 @@ const structuredData = {
   description,
   telephone: "+52 984 000 2024",
   image: [
-    "https://murmullo.studio/images/hero-1.webp",
-    "https://murmullo.studio/images/hero-2.webp",
-    "https://murmullo.studio/images/gallery-1.webp",
+    "https://murmullo.studio/images/hero/el-murmullo0.webp",
+    "https://murmullo.studio/images/hero/el-murmullo1.webp",
+    "https://murmullo.studio/images/hero/el-murmullo2.webp",
   ],
   address: {
     "@type": "PostalAddress",
@@ -61,8 +64,6 @@ const structuredData = {
   <EditorialIntro id="maison" />
 
   <FusionCuisineSlider client:visible />
-
-  <ActivitiesSection id="activities" />
 
   <EmbracedBySeaSlider client:visible />
 </BaseLayout>

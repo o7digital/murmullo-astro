@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 
 const images = [
-  "/images/hero/sous-hero/el-murmullo1.jpg",
-  "/images/hero/sous-hero/el-murmullo2.jpg",
-  "/images/hero/sous-hero/el-murmullo3.jpg",
-  "/images/hero/sous-hero/el-murmullo4.jpg",
-  "/images/hero/sous-hero/el-murmullo5.jpg",
-  "/images/hero/sous-hero/el-murmullo6.jpg",
-  "/images/hero/sous-hero/el-murmullo7.jpg",
-  "/images/hero/sous-hero/el-murmullo8.jpg",
+  "/images/hero/sous-hero/el-murmullo1.webp",
+  "/images/hero/sous-hero/el-murmullo2.webp",
+  "/images/hero/sous-hero/el-murmullo3.webp",
+  "/images/hero/sous-hero/el-murmullo4.webp",
+  "/images/hero/sous-hero/el-murmullo5.webp",
+  "/images/hero/sous-hero/el-murmullo6.webp",
+  "/images/hero/sous-hero/el-murmullo7.webp",
+  "/images/hero/sous-hero/el-murmullo8.webp",
 ];
 
 const SLIDE_DURATION = 4000;

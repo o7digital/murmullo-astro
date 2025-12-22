@@ -10,31 +10,31 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    src: "/images/hero/el-murmullo0.jpg",
+    src: "/images/hero/el-murmullo0.webp",
     title: "Luxury Living In Every Detail",
     caption: "Experience unmatched comfort with our exclusive luxurious stays",
     alt: "Murmullo luxury hotel view",
   },
   {
-    src: "/images/hero/el-murmullo1.jpg",
+    src: "/images/hero/el-murmullo1.webp",
     title: "The Essence Of Hospitality",
     caption: "Immerse yourself in the finest hospitality, with special deals on our luxury suites",
     alt: "Murmullo hotel architecture",
   },
   {
-    src: "/images/hero/el-murmullo2.jpg",
+    src: "/images/hero/el-murmullo2.webp",
     title: "Rooted In Timeless Traditions",
     caption: "Limited-time offers on premium rooms and suites",
     alt: "Murmullo hotel interior",
   },
   {
-    src: "/images/hero/el-murmullo3.jpg",
+    src: "/images/hero/el-murmullo3.webp",
     title: "Exceptional Care Awaiting",
     caption: "Book now and immerse yourself in the finest hospitality",
     alt: "Murmullo hotel experience",
   },
   {
-    src: "/images/hero/el-murmullo4.jpg",
+    src: "/images/hero/el-murmullo4.webp",
     title: "The Heart Of Hospitality",
     caption: "Experience unmatched comfort with our exclusive stays",
     alt: "Murmullo hotel luxury",
@@ -47,32 +47,31 @@ const navLinks = [
   { label: "Suites", href: "#suites", hasMegamenu: true },
   { label: "Embraced by the Sea", href: "#embraced-sea" },
   { label: "Fusion Cuisine", href: "#fusion-cuisine" },
-  { label: "Activities", href: "#activities" },
   { label: "Contact", href: "#contact" },
 ];
 
 const suites = [
   {
     title: "Sra. Tentación",
-    image: "/images/suites/sra-tentacion/exclusive-boutique-villa-hotel-zihuatanejo-ixtapa-mexico-01.jpg",
+    image: "/images/suites/sra-tentacion/exclusive-boutique-villa-hotel-zihuatanejo-ixtapa-mexico-01.webp",
     size: "55 m²",
     guests: "2-3 guests",
   },
   {
     title: "Garden Suite",
-    image: "/images/suites/garden-suite/garden-1.jpg",
+    image: "/images/suites/garden-suite/garden-1.webp",
     size: "45 m²",
     guests: "2 guests",
   },
   {
     title: "Junior Suite Señorita Surena",
-    image: "/images/suites/junior-suite-senerata-surena/junior-suite1.jpg",
+    image: "/images/suites/junior-suite-senerata-surena/junior-suite1.webp",
     size: "38 m²",
     guests: "2 guests",
   },
   {
     title: "Junior Suite Señorita Sonrisa",
-    image: "/images/suites/junior-suite-senorita-sonrisa/suite-1.jpg",
+    image: "/images/suites/junior-suite-senorita-sonrisa/suite-1.webp",
     size: "40 m²",
     guests: "2 guests",
   },
@@ -141,7 +140,7 @@ export default function HeroSlider() {
           {/* Logo et Navigation - Alignés à gauche */}
           <div className="flex items-center gap-10">
             <img 
-              src="/logo/logo.jpg" 
+              src="/logo/logo.webp" 
               alt="Murmullo Logo" 
               className="h-12 w-auto object-contain"
             />

@@ -13,7 +13,8 @@ export function getStaticPaths() {
 }
 
 const { suite } = Astro.props as { suite: (typeof suites)[number] };
-const title = `${suite.title} | El Murmullo`;
+const displayTitle = suite.displayTitle ?? suite.title;
+const title = `${displayTitle} | El Murmullo`;
 const description = suite.description;
 const defaultBookingUrl =
   "https://be.synxis.com/?adult=1&arrive=2025-12-22&chain=22402&child=0&currency=USD&depart=2025-12-23&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=MUR&rooms=1&src=24C";
@@ -56,7 +57,7 @@ const bookingUrl = suite.bookingUrl ?? defaultBookingUrl;
     <div class="absolute inset-0">
       <img
         src={suite.heroImage}
-        alt={suite.title}
+        alt={displayTitle}
         class="h-full w-full object-cover"
         loading="eager"
       />
@@ -65,7 +66,7 @@ const bookingUrl = suite.bookingUrl ?? defaultBookingUrl;
     <div class="relative flex h-full items-end">
       <div class="w-full pb-16 pt-32">
         <div class="max-w-6xl mx-auto px-6 sm:px-10">
-          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-serif text-white">{suite.title}</h1>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-serif text-white">{displayTitle}</h1>
           <p class="mt-4 max-w-2xl text-lg text-white/90">{suite.tagline}</p>
         </div>
       </div>
@@ -81,13 +82,13 @@ const bookingUrl = suite.bookingUrl ?? defaultBookingUrl;
           <SuiteGallery 
             client:visible
             images={[suite.heroImage, ...suite.details.map(d => d.image), ...suite.gallery]}
-            title={suite.title}
+            title={displayTitle}
           />
         </div>
 
         {/* Contenu à droite - 33% de l'espace */}
         <div class="max-w-xl">
-          <h2 class="text-3xl sm:text-4xl font-serif text-[#8B9F7E] mb-2">{suite.title}</h2>
+          <h2 class="text-3xl sm:text-4xl font-serif text-[#8B9F7E] mb-2">{displayTitle}</h2>
           
           {/* Détails de la suite */}
           <div class="mb-8 space-y-1 text-ink/80">

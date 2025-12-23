@@ -6,6 +6,7 @@ export type SuiteDetail = {
 
 export type Suite = {
   title: string;
+  displayTitle?: string;
   tagline: string;
   description: string;
   size: string;
@@ -84,6 +85,7 @@ export const suites: Suite[] = [
   },
   {
     title: "Garden Suite",
+    displayTitle: "Garden Suite Sueño Guajiro",
     tagline: "A calm hideaway wrapped in tropical greens and soft shade.",
     description:
       "Immerse yourself in nature with a serene terrace, warm textures, and breezy interiors designed to slow the pace of your stay.",

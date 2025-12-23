@@ -185,8 +185,8 @@ export default function AboutSlider() {
             closeLightbox();
           }}
           className="absolute top-4 right-4 bg-white hover:bg-gray-200 text-black w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-2xl sm:text-3xl font-bold z-20 transition-all shadow-lg hover:scale-110"
-          aria-label="Close"
-          title="Close (Esc)"
+          aria-label="Cerrar"
+          title="Cerrar (Esc)"
         >
           ✕
         </button>
@@ -251,7 +251,7 @@ export default function AboutSlider() {
         >
           <img
             src={lightboxImage}
-            alt="Lightbox"
+            alt="Vista ampliada"
             className="max-w-[90%] max-h-[90%] object-contain transition-transform"
             style={{
               transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,

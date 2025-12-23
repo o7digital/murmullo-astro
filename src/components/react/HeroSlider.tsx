@@ -108,14 +108,6 @@ export default function HeroSlider() {
           <p className="max-w-xl text-base sm:text-lg text-white/90 font-light leading-relaxed">
             {slides[activeIndex].caption}
           </p>
-          <div className="pt-4 flex flex-wrap items-center gap-4">
-            <a
-              href="/#suites"
-              className="inline-flex items-center gap-2 rounded-none border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-white uppercase tracking-wider transition hover:bg-white hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              View Rooms
-            </a>
-          </div>
         </div>
         
         {/* Navigation dots en bas */}

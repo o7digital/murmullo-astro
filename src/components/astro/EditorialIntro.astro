@@ -8,26 +8,26 @@ interface Props {
 const { id } = Astro.props as Props;
 ---
 
-<section id={id} class="relative h-screen min-h-[700px] overflow-hidden">
-  <div class="absolute inset-0 grid lg:grid-cols-[1fr,2fr]">
+<section id={id} class="relative min-h-screen overflow-hidden">
+  <div class="absolute inset-0 grid grid-cols-1 lg:grid-cols-[1fr,2fr]">
     <!-- Texte à gauche - prend 1/3 de l'espace, centré verticalement -->
-    <div class="relative flex items-center bg-gradient-to-br from-sand to-mist/60 px-8 lg:px-12">
-      <div class="w-full space-y-6">
-        <h1 class="text-2xl sm:text-3xl uppercase tracking-[0.10em] text-dusk font-semibold">About Murmullo</h1>
-        <h2 class="text-4xl leading-[1.05] sm:text-5xl lg:text-6xl font-serif text-dusk">
+    <div class="relative flex items-center bg-gradient-to-br from-sand to-mist/60 px-6 py-12 sm:px-8 lg:px-12 lg:py-0">
+      <div class="w-full space-y-4 sm:space-y-6">
+        <h1 class="text-xl sm:text-2xl md:text-3xl uppercase tracking-[0.10em] text-dusk font-semibold">About Murmullo</h1>
+        <h2 class="text-3xl leading-[1.05] sm:text-4xl md:text-5xl lg:text-6xl font-serif text-dusk">
           A sanctuary that whispers, between jungle and sea.
         </h2>
-        <p class="text-lg leading-relaxed text-ink/80">
+        <p class="text-base sm:text-lg leading-relaxed text-ink/80">
           Murmullo is a hidden boutique hotel nestled between the jungle and the sea, designed for travelers seeking tranquility without compromising beauty. Each suite opens onto soft light, mineral textures, and discreet service.
         </p>
-        <p class="text-lg leading-relaxed text-ink/80">
+        <p class="text-base sm:text-lg leading-relaxed text-ink/80">
           Wake up to the ocean's breath, dine on a fragrant patio, surrender to the pool as the sun slows down. Here, everything whispers: a slow rhythm, attentive cuisine, candlelit evenings. Nothing spectacular, just the feeling of being awaited.
         </p>
       </div>
     </div>
 
     <!-- Slider à droite - prend 2/3 de l'espace -->
-    <div class="relative h-full">
+    <div class="relative h-[400px] sm:h-[500px] lg:h-full">
       <AboutSlider client:visible />
     </div>
   </div>

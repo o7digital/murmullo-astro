@@ -1,12 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 
 const dishes = [
-  { name: "Mushroom Arancini", image: "/images/cuisines/9.webp" },
-  { name: "Caviar Blinis", image: "/images/cuisines/10.webp" },
-  { name: "Lobster Bisque", image: "/images/cuisines/cuisine5.webp" },
-  { name: "Beef Carpaccio", image: "/images/cuisines/cuisine6.webp" },
-  { name: "Seared Sea Bass", image: "/images/cuisines/cusine2.webp" },
-  { name: "Filet Mignon", image: "/images/cuisines/luxury-hotel-ixtapa-zihuatanejo-mexico-1.webp" },
+  { name: "Warm Seafood Salad", image: "/images/cuisines/9.webp" },
+  { name: "Fresh Oysters on the Half Shell", image: "/images/cuisines/10.webp" },
+  { name: "Warm Seafood Salad", image: "/images/cuisines/cuisine5.webp" },
+  { name: "Mexican-Style Seafood Soup", image: "/images/cuisines/cuisine6.webp" },
+  { name: "Grilled Spiny Lobster", image: "/images/cuisines/cusine2.webp" },
 ];
 
 export default function FusionCuisineSlider() {
@@ -156,7 +155,7 @@ export default function FusionCuisineSlider() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Texte à gauche */}
           <div className="max-w-xl px-4 sm:px-0 lg:-ml-40">
-            <span className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl italic text-ink/20 block mb-2">
+            <span className="text-xl sm:text-2xl uppercase tracking-[0.10em] text-dusk font-semibold block mb-2">
               Fusion Cuisine
             </span>
             <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ink mb-4 md:mb-6 leading-tight">

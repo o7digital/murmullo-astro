@@ -14,7 +14,7 @@ const seaFeatures = [
   {
     url: "/images/embraced/embraced3.webp",
     title: "Panoramic Terraces",
-    description: "Relax on our private terraces with stunning sunsets that take your breath away.",
+    description: "Relax on our private terraces with breathtaking sunsets.",
   },
 ];
 

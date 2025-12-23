@@ -50,7 +50,7 @@ export default function FusionCuisineSlider() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Texte à gauche */}
           <div className="max-w-xl px-4 sm:px-0 lg:-ml-40">
-            <span className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl italic text-ink/20 block mb-2">
+            <span className="text-xl sm:text-2xl uppercase tracking-[0.10em] text-dusk font-semibold block mb-2">
               Fusion Cuisine
             </span>
             <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ink mb-4 md:mb-6 leading-tight">

@@ -19,6 +19,7 @@ const seaFeatures = [
 ];
 
 export default function EmbracedBySeaSlider() {
+  const defaultZoom = 2.5;
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   const [zoom, setZoom] = useState(1);
@@ -28,7 +29,7 @@ export default function EmbracedBySeaSlider() {
 
   const openLightbox = (imageUrl: string) => {
     setLightboxImage(imageUrl);
-    setZoom(2.5);
+    setZoom(defaultZoom);
     setPosition({ x: 0, y: 0 });
   };
 
@@ -50,7 +51,7 @@ export default function EmbracedBySeaSlider() {
     }
     
     setLightboxImage(seaFeatures[newIndex].url);
-    setZoom(1);
+    setZoom(defaultZoom);
     setPosition({ x: 0, y: 0 });
   };
 
@@ -178,8 +179,8 @@ export default function EmbracedBySeaSlider() {
             ✕
           </button>
 
-          {/* Barre de zoom verticale à droite - cachée sur mobile */}
-          <div className="hidden sm:flex absolute right-4 md:right-6 top-1/2 -translate-y-1/2 flex-col items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full p-3 z-10">
+          {/* Barre de zoom verticale à droite */}
+          <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 flex flex-col items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full p-3 z-10">
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -273,6 +274,8 @@ export default function EmbracedBySeaSlider() {
                 onClick={(e) => {
                   e.stopPropagation();
                   setLightboxImage(feature.url);
+                  setZoom(defaultZoom);
+                  setPosition({ x: 0, y: 0 });
                 }}
               >
                 <img src={feature.url} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover" />

@@ -6,6 +6,7 @@ interface SuiteGalleryProps {
 }
 
 export default function SuiteGallery({ images, title }: SuiteGalleryProps) {
+  const defaultZoom = 2.5;
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [mainImage, setMainImage] = useState(images[0]);
   const [zoom, setZoom] = useState(1);
@@ -15,7 +16,7 @@ export default function SuiteGallery({ images, title }: SuiteGalleryProps) {
 
   const openLightbox = (image: string) => {
     setSelectedImage(image);
-    setZoom(2.5);
+    setZoom(defaultZoom);
     setPosition({ x: 0, y: 0 });
   };
 
@@ -37,7 +38,7 @@ export default function SuiteGallery({ images, title }: SuiteGalleryProps) {
     }
     
     setSelectedImage(images[newIndex]);
-    setZoom(2.5);
+    setZoom(defaultZoom);
     setPosition({ x: 0, y: 0 });
   };
 
@@ -209,6 +210,8 @@ export default function SuiteGallery({ images, title }: SuiteGalleryProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   setSelectedImage(image);
+                  setZoom(defaultZoom);
+                  setPosition({ x: 0, y: 0 });
                 }}
               >
                 <img src={image} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover" />

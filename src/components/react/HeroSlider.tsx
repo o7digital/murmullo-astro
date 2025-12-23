@@ -8,40 +8,36 @@ type Slide = {
   alt: string;
 };
 
-const heroTitle =
-  "El Murmullo\nLuxury Boutique Villa by La Casa Que Canta\nOfficial Site";
-const heroCaption = "An exclusive private villa experience between jungle and ocean";
-
 const slides: Slide[] = [
   {
     src: "/images/hero/el-murmullo0.webp",
-    title: heroTitle,
-    caption: heroCaption,
-    alt: "El Murmullo luxury boutique villa view",
+    title: "El Murmullo\nOur Luxury Villa by La Casa Que Canta",
+    caption: "An exclusive private villa overlooking the Pacific Ocean in Zihuatanejo, Mexico.",
+    alt: "El Murmullo luxury villa by La Casa Que Canta in Zihuatanejo, Mexico",
   },
   {
     src: "/images/hero/el-murmullo1.webp",
-    title: heroTitle,
-    caption: heroCaption,
-    alt: "El Murmullo luxury boutique villa architecture",
+    title: "Where Ocean Meets Sky",
+    caption: "Unparalleled privacy in one of Mexico's most exclusive coastal settings.",
+    alt: "Oceanfront luxury villa with ocean views in Zihuatanejo",
   },
   {
     src: "/images/hero/el-murmullo2.webp",
-    title: heroTitle,
-    caption: heroCaption,
-    alt: "El Murmullo luxury boutique villa interior",
+    title: "Refined Coastal Living",
+    caption: "The essence of La Casa Que Canta's understated elegance.",
+    alt: "Refined coastal villa interior by La Casa Que Canta",
   },
   {
     src: "/images/hero/el-murmullo3.webp",
-    title: heroTitle,
-    caption: heroCaption,
-    alt: "El Murmullo luxury boutique villa experience",
+    title: "Timeless Mexican Design",
+    caption: "Authentic Mexican architecture blending tradition with modern luxury.",
+    alt: "Traditional Mexican architecture in luxury villa setting",
   },
   {
     src: "/images/hero/el-murmullo4.webp",
-    title: heroTitle,
-    caption: heroCaption,
-    alt: "El Murmullo luxury boutique villa retreat",
+    title: "A Private Ocean Retreat",
+    caption: "Designed for absolute privacy, comfort, and breathtaking ocean views.",
+    alt: "Private ocean retreat villa in Zihuatanejo, Mexico",
   },
 ];
 
@@ -51,7 +47,6 @@ export default function HeroSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined" || !window.matchMedia) return;
@@ -63,25 +58,13 @@ export default function HeroSlider() {
   }, []);
 
   useEffect(() => {
-    if (prefersReducedMotion || paused || !hasInteracted) return undefined;
+    if (prefersReducedMotion || paused) return undefined;
     const id = window.setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % slides.length);
     }, SLIDE_DURATION);
 
     return () => window.clearInterval(id);
-  }, [hasInteracted, paused, prefersReducedMotion]);
-
-  useEffect(() => {
-    const enableAutoplay = () => setHasInteracted(true);
-    window.addEventListener("pointerdown", enableAutoplay, { once: true });
-    window.addEventListener("keydown", enableAutoplay, { once: true });
-    window.addEventListener("scroll", enableAutoplay, { once: true, passive: true });
-    return () => {
-      window.removeEventListener("pointerdown", enableAutoplay);
-      window.removeEventListener("keydown", enableAutoplay);
-      window.removeEventListener("scroll", enableAutoplay);
-    };
-  }, []);
+  }, [paused, prefersReducedMotion]);
 
   const handleSelect = (index: number) => {
     setActiveIndex(index);

@@ -18,6 +18,7 @@ export default function FusionCuisineSlider() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const lightboxRef = useRef<HTMLDivElement>(null);
 
   const openLightbox = (imageUrl: string) => {
     setLightboxImage(imageUrl);
@@ -61,15 +62,6 @@ export default function FusionCuisineSlider() {
     });
   };
 
-  const handleWheel = (e: React.WheelEvent) => {
-    e.preventDefault();
-    if (e.deltaY < 0) {
-      handleZoomIn();
-    } else {
-      handleZoomOut();
-    }
-  };
-
   const handleMouseDown = (e: React.MouseEvent) => {
     if (zoom > 1) {
       setIsDragging(true);
@@ -89,6 +81,31 @@ export default function FusionCuisineSlider() {
   const handleMouseUp = () => {
     setIsDragging(false);
   };
+  
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      if (lightboxImage && lightboxRef.current) {
+        e.preventDefault();
+        if (e.deltaY < 0) {
+          setZoom(prev => Math.min(prev + 0.5, 4));
+        } else {
+          setZoom(prev => {
+            const newZoom = Math.max(prev - 0.5, 1);
+            if (newZoom === 1) {
+              setPosition({ x: 0, y: 0 });
+            }
+            return newZoom;
+          });
+        }
+      }
+    };
+
+    const lightbox = lightboxRef.current;
+    if (lightbox) {
+      lightbox.addEventListener('wheel', handleWheel, { passive: false });
+      return () => lightbox.removeEventListener('wheel', handleWheel);
+    }
+  }, [lightboxImage]);
   
   useEffect(() => {
     const scrollContainer = scrollRef.current;
@@ -181,9 +198,9 @@ export default function FusionCuisineSlider() {
     {/* Lightbox */}
     {lightboxImage && (
       <div
+        ref={lightboxRef}
         className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center overflow-hidden"
         onClick={closeLightbox}
-        onWheel={handleWheel}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}

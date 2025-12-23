@@ -11,33 +11,33 @@ type Slide = {
 const slides: Slide[] = [
   {
     src: "/images/hero/el-murmullo0.webp",
-    title: "Luxury Living In Every Detail",
-    caption: "Experience unmatched comfort with our exclusive luxurious stays",
-    alt: "Murmullo luxury hotel view",
+    title: "Luxury Private Villas in Zihuatanejo, Mexico",
+    caption: "Exclusive villas by La Casa Que Canta, where privacy and ocean views define your stay.",
+    alt: "Luxury private villas in Zihuatanejo, Mexico by La Casa Que Canta",
   },
   {
     src: "/images/hero/el-murmullo1.webp",
-    title: "The Essence Of Hospitality",
-    caption: "Immerse yourself in the finest hospitality, with special deals on our luxury suites",
-    alt: "Murmullo hotel architecture",
+    title: "Private Ocean Retreats",
+    caption: "Each villa designed for exclusive comfort and breathtaking views",
+    alt: "Private villa architecture in Zihuatanejo by La Casa Que Canta",
   },
   {
     src: "/images/hero/el-murmullo2.webp",
-    title: "Rooted In Timeless Traditions",
-    caption: "Limited-time offers on premium rooms and suites",
-    alt: "Murmullo hotel interior",
+    title: "Timeless Mexican Design",
+    caption: "Authentic architecture blending tradition with modern luxury",
+    alt: "Luxury villa interior design in Zihuatanejo, Mexico",
   },
   {
     src: "/images/hero/el-murmullo3.webp",
-    title: "Exceptional Care Awaiting",
-    caption: "Book now and immerse yourself in the finest hospitality",
-    alt: "Murmullo hotel experience",
+    title: "Refined Coastal Living",
+    caption: "Experience the essence of La Casa Que Canta elegance",
+    alt: "Luxury coastal villa experience in Zihuatanejo",
   },
   {
     src: "/images/hero/el-murmullo4.webp",
-    title: "The Heart Of Hospitality",
-    caption: "Experience unmatched comfort with our exclusive stays",
-    alt: "Murmullo hotel luxury",
+    title: "Where Ocean Meets Sky",
+    caption: "Unparalleled privacy in one of Mexico's most exclusive destinations",
+    alt: "Oceanfront luxury villas in Zihuatanejo by La Casa Que Canta",
   },
 ];
 
@@ -123,7 +123,7 @@ export default function HeroSlider() {
           </p>
         </div>
         
-        {/* Navigation dots en bas */}
+        {/* Navigation dots */}
         <div className="mt-8 flex items-center gap-2">
           {slides.map((slide, index) => (
             <button
@@ -132,7 +132,7 @@ export default function HeroSlider() {
               className={`h-1.5 rounded-full transition-all ${
                 index === activeIndex ? "bg-white w-12" : "bg-white/40 w-1.5"
               }`}
-              aria-label={`Voir le visuel ${index + 1}`}
+              aria-label={`View slide ${index + 1}`}
             />
           ))}
         </div>

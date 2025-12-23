@@ -50,11 +50,11 @@ export const ui = {
     'cuisine.title': 'Fusion Cuisine',
     'cuisine.subtitle': 'Harvest Inspired Fine Dining',
     'cuisine.description': 'Savor the fresh regional dishes prepared instantly with high quality products illustrating our Mexican gastronomy with European influences.',
-    'cuisine.dish1': 'Warm Seafood Salad',
-    'cuisine.dish2': 'Fresh Oysters on the Half Shell',
-    'cuisine.dish3': 'Warm Seafood Salad',
-    'cuisine.dish4': 'Mexican-Style Seafood Soup',
-    'cuisine.dish5': 'Grilled Spiny Lobster',
+    'cuisine.dish1': 'Grilled Spiny Lobster',
+    'cuisine.dish2': 'Warm Seafood Salad',
+    'cuisine.dish3': 'Fresh Oysters on the Half Shell',
+    'cuisine.dish4': 'Warm Seafood Salad',
+    'cuisine.dish5': 'Mexican-Style Seafood Soup',
     
     // Contact
     'contact.title': 'Contact Us',
@@ -127,11 +127,11 @@ export const ui = {
     'cuisine.title': 'Cocina Fusión',
     'cuisine.subtitle': 'Excelencia Culinaria',
     'cuisine.description': 'Descubra nuestra cocina fusión exclusiva donde los sabores mexicanos tradicionales se encuentran con técnicas culinarias contemporáneas.',
-    'cuisine.dish1': 'Ensalada Tibia de Mariscos',
-    'cuisine.dish2': 'Ostiones Frescos en su Concha',
-    'cuisine.dish3': 'Ensalada Tibia de Mariscos',
-    'cuisine.dish4': 'Sopa de Mariscos Estilo Mexicano',
-    'cuisine.dish5': 'Langosta Espinosa a la Parrilla',
+    'cuisine.dish1': 'Langosta Espinosa a la Parrilla',
+    'cuisine.dish2': 'Ensalada Tibia de Mariscos',
+    'cuisine.dish3': 'Ostiones Frescos en su Concha',
+    'cuisine.dish4': 'Ensalada Tibia de Mariscos',
+    'cuisine.dish5': 'Sopa de Mariscos Estilo Mexicano',
     
     // Contact
     'contact.title': 'Contáctenos',

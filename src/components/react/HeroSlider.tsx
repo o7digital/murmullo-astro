@@ -102,7 +102,7 @@ export default function HeroSlider() {
       {/* Texte du slider - En bas à gauche comme Zotela */}
       <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-20 sm:px-10 sm:pb-24 lg:px-16 lg:pb-28">
         <div className="max-w-4xl space-y-4">
-          <h1 className="text-5xl leading-[1.1] sm:text-6xl lg:text-7xl xl:text-8xl font-display font-medium text-white whitespace-pre-line">
+          <h1 className="text-5xl leading-[1.1] sm:text-6xl lg:text-7xl xl:text-8xl font-display font-medium text-white">
             {slides[activeIndex].title}
           </h1>
           <p className="max-w-xl text-base sm:text-lg text-white/90 font-light leading-relaxed">

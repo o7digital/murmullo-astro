@@ -17,8 +17,8 @@ export const ui = {
     // Hero Slider
     'hero.slide1.title': 'El Murmullo',
     'hero.slide1.caption': 'An exclusive private villa overlooking the Pacific Ocean in Zihuatanejo, Mexico.',
-    'hero.slide2.title': 'Where Ocean Meets Sky',
-    'hero.slide2.caption': 'Unparalleled privacy in one of Mexico\'s most exclusive coastal settings.',
+    'hero.slide2.title': 'Tranquility Overlooking Playa La Ropa',
+    'hero.slide2.caption': 'Unwind in total serenity with exclusive panoramic views of one of Mexico\'s most beautiful beaches.',
     'hero.slide3.title': 'Refined Coastal Living',
     'hero.slide3.caption': 'The essence of La Casa Que Canta\'s understated elegance.',
     'hero.slide4.title': 'Timeless Mexican Design',
@@ -94,8 +94,8 @@ export const ui = {
     // Hero Slider
     'hero.slide1.title': 'El Murmullo',
     'hero.slide1.caption': 'Una villa privada exclusiva con vista al Océano Pacífico en Zihuatanejo, México.',
-    'hero.slide2.title': 'Donde el Océano se Encuentra con el Cielo',
-    'hero.slide2.caption': 'Privacidad incomparable en uno de los entornos costeros más exclusivos de México.',
+    'hero.slide2.title': 'Tranquilidad con Vista a Playa La Ropa',
+    'hero.slide2.caption': 'Relájese en total serenidad con vistas panorámicas exclusivas de una de las playas más hermosas de México.',
     'hero.slide3.title': 'Vida Costera Refinada',
     'hero.slide3.caption': 'La esencia de la elegancia discreta de La Casa Que Canta.',
     'hero.slide4.title': 'Diseño Mexicano Atemporal',

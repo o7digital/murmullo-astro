@@ -10,7 +10,7 @@ const images = [
   "/images/mexicana.webp",
 ];
 
-const SLIDE_DURATION = 4000;
+const SLIDE_DURATION = 5000;
 
 export default function ActivitiesSlider() {
   const [activeIndex, setActiveIndex] = useState(0);

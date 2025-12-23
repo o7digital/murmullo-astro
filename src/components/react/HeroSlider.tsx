@@ -41,7 +41,7 @@ const slides: Slide[] = [
   },
 ];
 
-const SLIDE_DURATION = 6500;
+const SLIDE_DURATION = 5000;
 
 export default function HeroSlider() {
   const [activeIndex, setActiveIndex] = useState(0);

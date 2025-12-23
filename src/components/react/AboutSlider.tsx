@@ -11,7 +11,7 @@ const images = [
   "/images/hero/sous-hero/el-murmullo8.webp",
 ];
 
-const SLIDE_DURATION = 4000;
+const SLIDE_DURATION = 5000;
 
 export default function AboutSlider() {
   const [activeIndex, setActiveIndex] = useState(0);

@@ -1,14 +1,20 @@
 import { useState, useEffect, useRef } from "react";
+import { ui } from "@/i18n";
 
-const dishes = [
-  { name: "Warm Seafood Salad", image: "/images/cuisines/9.webp" },
-  { name: "Fresh Oysters on the Half Shell", image: "/images/cuisines/10.webp" },
-  { name: "Warm Seafood Salad", image: "/images/cuisines/cuisine5.webp" },
-  { name: "Mexican-Style Seafood Soup", image: "/images/cuisines/cuisine6.webp" },
-  { name: "Grilled Spiny Lobster", image: "/images/cuisines/cusine2.webp" },
-];
+interface FusionCuisineSliderProps {
+  lang?: 'en' | 'es';
+}
 
-export default function FusionCuisineSlider() {
+export default function FusionCuisineSlider({ lang = 'en' }: FusionCuisineSliderProps) {
+  const t = ui[lang];
+  
+  const dishes = [
+    { name: t['cuisine.dish1'], image: "/images/cuisines/9.webp" },
+    { name: t['cuisine.dish2'], image: "/images/cuisines/10.webp" },
+    { name: t['cuisine.dish3'], image: "/images/cuisines/cuisine5.webp" },
+    { name: t['cuisine.dish4'], image: "/images/cuisines/cuisine6.webp" },
+    { name: t['cuisine.dish5'], image: "/images/cuisines/cusine2.webp" },
+  ];
   const defaultZoom = 2.5;
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -156,15 +162,13 @@ export default function FusionCuisineSlider() {
           {/* Texte à gauche */}
           <div className="max-w-xl px-4 sm:px-0 lg:-ml-40">
             <span className="text-xl sm:text-2xl uppercase tracking-[0.10em] text-dusk font-semibold block mb-2">
-              Fusion Cuisine
+              {t['cuisine.title']}
             </span>
             <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ink mb-4 md:mb-6 leading-tight">
-              Harvest Inspired
-              <br />
-              Fine Dining
+              {t['cuisine.subtitle']}
             </h2>
             <p className="text-sm sm:text-base text-ink/70 leading-relaxed mb-6 md:mb-8">
-              Savor the fresh regional dishes prepared instantly with high quality products illustrating our Mexican gastronomy with European influences.
+              {t['cuisine.description']}
             </p>
           </div>
 

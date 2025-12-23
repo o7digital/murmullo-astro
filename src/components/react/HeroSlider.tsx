@@ -1,49 +1,61 @@
 import React, { useEffect, useState } from "react";
 import { slugify } from "@/utils/slugify";
+import { ui } from "@/i18n";
 
 type Slide = {
   src: string;
-  title: string;
-  caption: string;
+  titleKey: string;
+  captionKey: string;
   alt: string;
 };
 
-const slides: Slide[] = [
+interface HeroSliderProps {
+  lang?: 'en' | 'es';
+}
+
+const slidesData: Slide[] = [
   {
     src: "/images/hero/el-murmullo0.webp",
-    title: "El Murmullo",
-    caption: "An exclusive private villa overlooking the Pacific Ocean in Zihuatanejo, Mexico.",
+    titleKey: "hero.slide1.title",
+    captionKey: "hero.slide1.caption",
     alt: "El Murmullo luxury villa by La Casa Que Canta in Zihuatanejo, Mexico",
   },
   {
     src: "/images/hero/el-murmullo1.webp",
-    title: "Where Ocean Meets Sky",
-    caption: "Unparalleled privacy in one of Mexico's most exclusive coastal settings.",
+    titleKey: "hero.slide2.title",
+    captionKey: "hero.slide2.caption",
     alt: "Oceanfront luxury villa with ocean views in Zihuatanejo",
   },
   {
     src: "/images/hero/el-murmullo2.webp",
-    title: "Refined Coastal Living",
-    caption: "The essence of La Casa Que Canta's understated elegance.",
+    titleKey: "hero.slide3.title",
+    captionKey: "hero.slide3.caption",
     alt: "Refined coastal villa interior by La Casa Que Canta",
   },
   {
     src: "/images/hero/el-murmullo3.webp",
-    title: "Timeless Mexican Design",
-    caption: "Authentic Mexican architecture blending tradition with modern luxury.",
+    titleKey: "hero.slide4.title",
+    captionKey: "hero.slide4.caption",
     alt: "Traditional Mexican architecture in luxury villa setting",
   },
   {
     src: "/images/hero/el-murmullo4.webp",
-    title: "A Private Ocean Retreat",
-    caption: "Designed for absolute privacy, comfort, and breathtaking ocean views.",
+    titleKey: "hero.slide5.title",
+    captionKey: "hero.slide5.caption",
     alt: "Private ocean retreat villa in Zihuatanejo, Mexico",
   },
 ];
 
 const SLIDE_DURATION = 5000;
 
-export default function HeroSlider() {
+export default function HeroSlider({ lang = 'en' }: HeroSliderProps) {
+  const t = ui[lang];
+  const slides = slidesData.map(slide => ({
+    src: slide.src,
+    title: t[slide.titleKey as keyof typeof t] as string,
+    caption: t[slide.captionKey as keyof typeof t] as string,
+    alt: slide.alt,
+  }));
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);

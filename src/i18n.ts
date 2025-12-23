@@ -48,8 +48,8 @@ export const ui = {
     
     // Fusion Cuisine
     'cuisine.title': 'Fusion Cuisine',
-    'cuisine.subtitle': 'Culinary Excellence',
-    'cuisine.description': 'Discover our signature fusion cuisine where traditional Mexican flavors meet contemporary culinary techniques.',
+    'cuisine.subtitle': 'Harvest Inspired Fine Dining',
+    'cuisine.description': 'Savor the fresh regional dishes prepared instantly with high quality products illustrating our Mexican gastronomy with European influences.',
     'cuisine.dish1': 'Warm Seafood Salad',
     'cuisine.dish2': 'Fresh Oysters on the Half Shell',
     'cuisine.dish3': 'Warm Seafood Salad',

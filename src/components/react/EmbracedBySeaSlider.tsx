@@ -1,24 +1,30 @@
 import { useState, useEffect, useRef } from "react";
+import { ui } from "@/i18n";
 
-const seaFeatures = [
-  {
-    url: "/images/embraced/embraced1.webp",
-    title: "Ocean Views",
-    description: "Admire breathtaking views of the Pacific Ocean from every corner of our property.",
-  },
-  {
-    url: "/images/embraced/embraced2.webp",
-    title: "Private Beach Access",
-    description: "Enjoy direct access to pristine beaches and crystal-clear waters.",
-  },
-  {
-    url: "/images/embraced/embraced3.webp",
-    title: "Panoramic Terraces",
-    description: "Relax on our private terraces with breathtaking sunsets.",
-  },
-];
+interface EmbracedBySeaSliderProps {
+  lang?: 'en' | 'es';
+}
 
-export default function EmbracedBySeaSlider() {
+export default function EmbracedBySeaSlider({ lang = 'en' }: EmbracedBySeaSliderProps) {
+  const t = ui[lang];
+  
+  const seaFeatures = [
+    {
+      url: "/images/embraced/embraced1.webp",
+      title: t['embraced.feature1.title'],
+      description: t['embraced.feature1.description'],
+    },
+    {
+      url: "/images/embraced/embraced2.webp",
+      title: t['embraced.feature2.title'],
+      description: t['embraced.feature2.description'],
+    },
+    {
+      url: "/images/embraced/embraced3.webp",
+      title: t['embraced.feature3.title'],
+      description: t['embraced.feature3.description'],
+    },
+  ];
   const defaultZoom = 2.5;
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
@@ -133,13 +139,13 @@ export default function EmbracedBySeaSlider() {
           {/* En-tête de section */}
           <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
             <span className="text-xs font-bold tracking-[0.2em] uppercase text-ink/60 block mb-3 md:mb-4">
-              Surrounded by the sea
+              {t['embraced.subtitle']}
             </span>
             <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ink mb-4 md:mb-6">
-              Embraced by the Sea
+              {t['embraced.title']}
             </h2>
             <p className="text-base sm:text-lg text-ink/70 max-w-2xl mx-auto px-4">
-              Experience the luxury of this Mexican home with Mediterranean nautical touches, ideal setting to admire the peaceful climate and panoramic views of the picturesque bay of Zihuatanejo.
+              {t['embraced.description']}
             </p>
           </div>
 
@@ -181,8 +187,7 @@ export default function EmbracedBySeaSlider() {
           {/* Texte additionnel */}
           <div className="mt-8 md:mt-12 max-w-3xl mx-auto text-center px-4">
             <p className="text-sm sm:text-base text-ink/70 leading-relaxed">
-              Our privileged location offers direct access to pristine beaches and stunning ocean vistas. 
-              Wake up to the sound of waves and enjoy breathtaking sunsets from your private terrace.
+              {t['embraced.additional']}
             </p>
           </div>
         </div>

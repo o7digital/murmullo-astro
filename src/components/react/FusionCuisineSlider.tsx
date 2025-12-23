@@ -1,12 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 
 const dishes = [
-  { name: "Mushroom Arancini", image: "/images/cuisines/9.webp" },
-  { name: "Caviar Blinis", image: "/images/cuisines/10.webp" },
-  { name: "Lobster Bisque", image: "/images/cuisines/cuisine5.webp" },
-  { name: "Beef Carpaccio", image: "/images/cuisines/cuisine6.webp" },
-  { name: "Seared Sea Bass", image: "/images/cuisines/cusine2.webp" },
-  { name: "Filet Mignon", image: "/images/cuisines/luxury-hotel-ixtapa-zihuatanejo-mexico-1.webp" },
+  { name: "Fresh Oysters on the Half Shell", image: "/images/cuisines/9.webp" },
+  { name: "Mexican-Style Seafood Soup", image: "/images/cuisines/10.webp" },
+  { name: "Warm Seafood Salad", image: "/images/cuisines/cuisine5.webp" },
+  { name: "Traditional Mexican Tamal", image: "/images/cuisines/cuisine6.webp" },
+  { name: "Grilled Spiny Lobster", image: "/images/cuisines/cusine2.webp" },
 ];
 
 export default function FusionCuisineSlider() {

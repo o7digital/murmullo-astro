@@ -115,7 +115,7 @@ const translations = {
               <div>
                 <h3 class="text-xl font-medium text-ink mb-3">{detail.title === "Amenities" ? "Comodidades" : detail.title}</h3>
                 <ul class="space-y-2">
-                  {detail.amenities.map((amenity) => (
+                  {detail.amenities && detail.amenities.map((amenity) => (
                     <li class="flex items-start gap-2 text-ink/70">
                       <svg class="h-5 w-5 text-[#8B9F7E] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />

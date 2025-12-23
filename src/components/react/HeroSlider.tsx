@@ -8,40 +8,36 @@ type Slide = {
   alt: string;
 };
 
-const heroTitle =
-  "El Murmullo\nLuxury Boutique Villa by La Casa Que Canta\nOfficial Site";
-const heroCaption = "An exclusive private villa experience between jungle and ocean";
-
 const slides: Slide[] = [
   {
     src: "/images/hero/el-murmullo0.webp",
-    title: heroTitle,
-    caption: heroCaption,
-    alt: "El Murmullo luxury boutique villa view",
+    title: "Luxury Living In Every Detail",
+    caption: "Experience unmatched comfort with our exclusive luxurious stays",
+    alt: "Murmullo luxury hotel view",
   },
   {
     src: "/images/hero/el-murmullo1.webp",
-    title: heroTitle,
-    caption: heroCaption,
-    alt: "El Murmullo luxury boutique villa architecture",
+    title: "The Essence Of Hospitality",
+    caption: "Immerse yourself in the finest hospitality, with special deals on our luxury suites",
+    alt: "Murmullo hotel architecture",
   },
   {
     src: "/images/hero/el-murmullo2.webp",
-    title: heroTitle,
-    caption: heroCaption,
-    alt: "El Murmullo luxury boutique villa interior",
+    title: "Rooted In Timeless Traditions",
+    caption: "Limited-time offers on premium rooms and suites",
+    alt: "Murmullo hotel interior",
   },
   {
     src: "/images/hero/el-murmullo3.webp",
-    title: heroTitle,
-    caption: heroCaption,
-    alt: "El Murmullo luxury boutique villa experience",
+    title: "Exceptional Care Awaiting",
+    caption: "Book now and immerse yourself in the finest hospitality",
+    alt: "Murmullo hotel experience",
   },
   {
     src: "/images/hero/el-murmullo4.webp",
-    title: heroTitle,
-    caption: heroCaption,
-    alt: "El Murmullo luxury boutique villa retreat",
+    title: "The Heart Of Hospitality",
+    caption: "Experience unmatched comfort with our exclusive stays",
+    alt: "Murmullo hotel luxury",
   },
 ];
 
@@ -119,7 +115,7 @@ export default function HeroSlider() {
       {/* Texte du slider - En bas à gauche comme Zotela */}
       <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-20 sm:px-10 sm:pb-24 lg:px-16 lg:pb-28">
         <div className="max-w-4xl space-y-4">
-          <h1 className="text-5xl leading-[1.1] sm:text-6xl lg:text-7xl xl:text-8xl font-display font-medium text-white whitespace-pre-line">
+          <h1 className="text-5xl leading-[1.1] sm:text-6xl lg:text-7xl xl:text-8xl font-display font-medium text-white">
             {slides[activeIndex].title}
           </h1>
           <p className="max-w-xl text-base sm:text-lg text-white/90 font-light leading-relaxed">

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 type GalleryItem = {
   src: string;
@@ -69,7 +69,84 @@ type Props = {
 };
 
 export default function ExperienceGallery({ id }: Props) {
+  const defaultZoom = 2.5;
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const [zoom, setZoom] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
+  const openLightbox = (imageUrl: string) => {
+    setLightboxImage(imageUrl);
+    setZoom(defaultZoom);
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const closeLightbox = () => {
+    setLightboxImage(null);
+    setZoom(1);
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const navigateLightbox = (direction: "prev" | "next") => {
+    if (!lightboxImage) return;
+    const currentIndex = items.findIndex(item => item.src === lightboxImage);
+    let newIndex;
+    
+    if (direction === "prev") {
+      newIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+    } else {
+      newIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
+    }
+    
+    setLightboxImage(items[newIndex].src);
+    setZoom(defaultZoom);
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const handleZoomIn = () => {
+    setZoom(prev => Math.min(prev + 0.5, 4));
+  };
+
+  const handleZoomOut = () => {
+    setZoom(prev => {
+      const newZoom = Math.max(prev - 0.5, 1);
+      if (newZoom === 1) {
+        setPosition({ x: 0, y: 0 });
+      }
+      return newZoom;
+    });
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+      handleZoomIn();
+    } else {
+      handleZoomOut();
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (zoom > 1) {
+      setIsDragging(true);
+      setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && zoom > 1) {
+      setPosition({
+        x: e.clientX - dragStart.x,
+        y: e.clientY - dragStart.y
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
 
   const scrollBy = (delta: number) => {
     if (!trackRef.current) return;
@@ -77,6 +154,7 @@ export default function ExperienceGallery({ id }: Props) {
   };
 
   return (
+    <>
     <div className="section-shell" id={id}>
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-2xl space-y-2">
@@ -115,7 +193,8 @@ export default function ExperienceGallery({ id }: Props) {
         {items.map((item, index) => (
           <figure
             key={item.src}
-            className="group relative w-72 shrink-0 snap-start overflow-hidden rounded-3xl bg-mist/60 shadow-soft sm:w-80 md:w-[22rem]"
+            className="group relative w-72 shrink-0 snap-start overflow-hidden rounded-3xl bg-mist/60 shadow-soft sm:w-80 md:w-[22rem] cursor-pointer"
+            onClick={() => openLightbox(item.src)}
           >
             <img
               src={item.src}
@@ -136,5 +215,131 @@ export default function ExperienceGallery({ id }: Props) {
         ))}
       </div>
     </div>
+
+    {/* Lightbox */}
+    {lightboxImage && (
+      <div
+        className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center overflow-hidden"
+        onClick={closeLightbox}
+        onWheel={handleWheel}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
+        {/* Bouton fermer avec croix visible */}
+        <button
+          onClick={closeLightbox}
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white/20 hover:bg-white/30 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold z-20 transition-all"
+          aria-label="Close"
+        >
+          ✕
+        </button>
+
+        {/* Barre de zoom verticale à droite */}
+        <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 flex flex-col items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full p-3 z-10">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handleZoomIn();
+            }}
+            className="bg-white/20 hover:bg-white/30 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold transition-all"
+            aria-label="Zoom in"
+          >
+            +
+          </button>
+          
+          <div className="flex flex-col items-center gap-2">
+            <div className="h-32 w-1 bg-white/20 rounded-full relative">
+              <div 
+                className="absolute bottom-0 w-full bg-white rounded-full transition-all"
+                style={{ height: `${((zoom - 1) / 3) * 100}%` }}
+              />
+              <div 
+                className="absolute w-4 h-4 bg-white rounded-full -left-1.5 transition-all"
+                style={{ bottom: `calc(${((zoom - 1) / 3) * 100}% - 8px)` }}
+              />
+            </div>
+            <div className="text-white text-xs font-semibold bg-white/20 px-2 py-1 rounded">
+              {Math.round(zoom * 100)}%
+            </div>
+          </div>
+          
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handleZoomOut();
+            }}
+            className="bg-white/20 hover:bg-white/30 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold transition-all"
+            aria-label="Zoom out"
+          >
+            −
+          </button>
+        </div>
+
+        {/* Bouton précédent */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            navigateLightbox("prev");
+          }}
+          className="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 text-white text-3xl sm:text-4xl hover:text-gray-300 z-10 bg-white/10 hover:bg-white/20 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center"
+          aria-label="Previous"
+        >
+          ‹
+        </button>
+
+        {/* Image */}
+        <div 
+          className="flex items-center justify-center w-full h-full"
+          style={{ cursor: zoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default' }}
+        >
+          <img
+            src={lightboxImage}
+            alt="Lightbox"
+            className="max-w-[90%] max-h-[90%] object-contain transition-transform"
+            style={{
+              transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
+              transformOrigin: 'center center'
+            }}
+            onClick={(e) => e.stopPropagation()}
+            onMouseDown={handleMouseDown}
+            draggable={false}
+          />
+        </div>
+
+        {/* Bouton suivant */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            navigateLightbox("next");
+          }}
+          className="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 text-white text-3xl sm:text-4xl hover:text-gray-300 z-10 bg-white/10 hover:bg-white/20 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center"
+          aria-label="Next"
+        >
+          ›
+        </button>
+
+        {/* Miniatures en bas */}
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-2 overflow-x-auto max-w-[90vw]">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className={`w-12 h-12 sm:w-16 sm:h-16 cursor-pointer rounded overflow-hidden flex-shrink-0 ${
+                lightboxImage === item.src ? "ring-2 ring-white" : "opacity-60 hover:opacity-100"
+              }`}
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxImage(item.src);
+                setZoom(defaultZoom);
+                setPosition({ x: 0, y: 0 });
+              }}
+            >
+              <img src={item.src} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover" />
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+    </>
   );
 }

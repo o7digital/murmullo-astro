@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 const dishes = [
-  { name: "Grilled Spiny Lobster", image: "/images/cuisines/9.webp" },
+  { name: "Warm Seafood Salad", image: "/images/cuisines/9.webp" },
   { name: "Fresh Oysters on the Half Shell", image: "/images/cuisines/10.webp" },
   { name: "Warm Seafood Salad", image: "/images/cuisines/cuisine5.webp" },
   { name: "Mexican-Style Seafood Soup", image: "/images/cuisines/cuisine6.webp" },

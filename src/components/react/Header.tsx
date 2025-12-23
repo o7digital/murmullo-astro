@@ -108,7 +108,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
       <div className={`fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md transition-transform duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}>
-        <header className="container mx-auto flex items-center justify-between px-6 py-4 sm:px-10 sm:py-5">
+        <header className="container mx-auto flex items-center justify-between px-6 py-4 sm:px-10 sm:py-5 relative">
           {/* Menu Hamburger Mobile - À gauche */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -134,7 +134,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
               {links.map((link) => (
                 <div
                   key={link.href}
-                  className="relative"
+                  className="static"
                   onMouseEnter={() => link.hasMegamenu && setShowSuitesMegamenu(true)}
                   onMouseLeave={() => link.hasMegamenu && setShowSuitesMegamenu(false)}
                 >
@@ -149,7 +149,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
                   
                   {/* Megamenu pour Suites */}
                   {link.hasMegamenu && showSuitesMegamenu && (
-                    <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-screen max-w-[1600px]">
+                    <div className="absolute left-0 right-0 top-full pt-4">
                       <div className="bg-white rounded-2xl shadow-2xl p-12 mx-6 border border-dusk/10">
                         <div className="grid grid-cols-4 gap-8">
                           {suites.map((suite) => (

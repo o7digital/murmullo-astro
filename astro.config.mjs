@@ -14,7 +14,7 @@ export default defineConfig({
     compress({
       CSS: true,
       HTML: true,
-      Image: true,
+      Image: false,
       JavaScript: true,
       SVG: true,
     }),
@@ -27,7 +27,7 @@ export default defineConfig({
     inlineStylesheets: "auto",
   },
   prefetch: {
-    prefetchAll: false,
+    prefetchAll: true,
     defaultStrategy: "viewport",
   },
 });

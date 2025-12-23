@@ -47,7 +47,6 @@ export default function HeroSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined" || !window.matchMedia) return;
@@ -59,25 +58,13 @@ export default function HeroSlider() {
   }, []);
 
   useEffect(() => {
-    if (prefersReducedMotion || paused || !hasInteracted) return undefined;
+    if (prefersReducedMotion || paused) return undefined;
     const id = window.setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % slides.length);
     }, SLIDE_DURATION);
 
     return () => window.clearInterval(id);
-  }, [hasInteracted, paused, prefersReducedMotion]);
-
-  useEffect(() => {
-    const enableAutoplay = () => setHasInteracted(true);
-    window.addEventListener("pointerdown", enableAutoplay, { once: true });
-    window.addEventListener("keydown", enableAutoplay, { once: true });
-    window.addEventListener("scroll", enableAutoplay, { once: true, passive: true });
-    return () => {
-      window.removeEventListener("pointerdown", enableAutoplay);
-      window.removeEventListener("keydown", enableAutoplay);
-      window.removeEventListener("scroll", enableAutoplay);
-    };
-  }, []);
+  }, [paused, prefersReducedMotion]);
 
   const handleSelect = (index: number) => {
     setActiveIndex(index);

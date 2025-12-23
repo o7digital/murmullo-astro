@@ -11,33 +11,33 @@ type Slide = {
 const slides: Slide[] = [
   {
     src: "/images/hero/el-murmullo0.webp",
-    title: "Luxury Private Villas in Zihuatanejo, Mexico",
-    caption: "Exclusive villas by La Casa Que Canta, where privacy and ocean views define your stay.",
-    alt: "Luxury private villas in Zihuatanejo, Mexico by La Casa Que Canta",
+    title: "El Murmullo\nOur Luxury Villa by La Casa Que Canta",
+    caption: "An exclusive private villa overlooking the Pacific Ocean in Zihuatanejo, Mexico.",
+    alt: "El Murmullo luxury villa by La Casa Que Canta in Zihuatanejo, Mexico",
   },
   {
     src: "/images/hero/el-murmullo1.webp",
-    title: "Private Ocean Retreats",
-    caption: "Each villa designed for exclusive comfort and breathtaking views",
-    alt: "Private villa architecture in Zihuatanejo by La Casa Que Canta",
+    title: "Where Ocean Meets Sky",
+    caption: "Unparalleled privacy in one of Mexico's most exclusive coastal settings.",
+    alt: "Oceanfront luxury villa with ocean views in Zihuatanejo",
   },
   {
     src: "/images/hero/el-murmullo2.webp",
-    title: "Timeless Mexican Design",
-    caption: "Authentic architecture blending tradition with modern luxury",
-    alt: "Luxury villa interior design in Zihuatanejo, Mexico",
+    title: "Refined Coastal Living",
+    caption: "The essence of La Casa Que Canta's understated elegance.",
+    alt: "Refined coastal villa interior by La Casa Que Canta",
   },
   {
     src: "/images/hero/el-murmullo3.webp",
-    title: "Refined Coastal Living",
-    caption: "Experience the essence of La Casa Que Canta elegance",
-    alt: "Luxury coastal villa experience in Zihuatanejo",
+    title: "Timeless Mexican Design",
+    caption: "Authentic Mexican architecture blending tradition with modern luxury.",
+    alt: "Traditional Mexican architecture in luxury villa setting",
   },
   {
     src: "/images/hero/el-murmullo4.webp",
-    title: "Where Ocean Meets Sky",
-    caption: "Unparalleled privacy in one of Mexico's most exclusive destinations",
-    alt: "Oceanfront luxury villas in Zihuatanejo by La Casa Que Canta",
+    title: "A Private Ocean Retreat",
+    caption: "Designed for absolute privacy, comfort, and breathtaking ocean views.",
+    alt: "Private ocean retreat villa in Zihuatanejo, Mexico",
   },
 ];
 
@@ -47,7 +47,6 @@ export default function HeroSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined" || !window.matchMedia) return;
@@ -59,25 +58,15 @@ export default function HeroSlider() {
   }, []);
 
   useEffect(() => {
-    if (prefersReducedMotion || paused || !hasInteracted) return undefined;
+    if (prefersReducedMotion || paused) return undefined;
     const id = window.setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % slides.length);
     }, SLIDE_DURATION);
 
     return () => window.clearInterval(id);
-  }, [hasInteracted, paused, prefersReducedMotion]);
+  }, [paused, prefersReducedMotion]);
 
-  useEffect(() => {
-    const enableAutoplay = () => setHasInteracted(true);
-    window.addEventListener("pointerdown", enableAutoplay, { once: true });
-    window.addEventListener("keydown", enableAutoplay, { once: true });
-    window.addEventListener("scroll", enableAutoplay, { once: true, passive: true });
-    return () => {
-      window.removeEventListener("pointerdown", enableAutoplay);
-      window.removeEventListener("keydown", enableAutoplay);
-      window.removeEventListener("scroll", enableAutoplay);
-    };
-  }, []);
+
 
   const handleSelect = (index: number) => {
     setActiveIndex(index);
@@ -115,7 +104,7 @@ export default function HeroSlider() {
       {/* Texte du slider - En bas à gauche comme Zotela */}
       <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-20 sm:px-10 sm:pb-24 lg:px-16 lg:pb-28">
         <div className="max-w-4xl space-y-4">
-          <h1 className="text-5xl leading-[1.1] sm:text-6xl lg:text-7xl xl:text-8xl font-display font-medium text-white">
+          <h1 className="text-5xl leading-[1.1] sm:text-6xl lg:text-7xl xl:text-8xl font-display font-medium text-white whitespace-pre-line">
             {slides[activeIndex].title}
           </h1>
           <p className="max-w-xl text-base sm:text-lg text-white/90 font-light leading-relaxed">

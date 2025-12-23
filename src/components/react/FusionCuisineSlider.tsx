@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const dishes = [
   { name: "Mushroom Arancini", image: "/images/cuisines/9.webp" },
@@ -11,9 +11,37 @@ const dishes = [
 
 export default function FusionCuisineSlider() {
   const [isPaused, setIsPaused] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer || isPaused) return;
+    
+    let animationId: number;
+    let currentPosition = 0;
+    const speed = 0.5; // pixels per frame
+    
+    const animate = () => {
+      if (!scrollContainer) return;
+      
+      currentPosition += speed;
+      const maxScroll = scrollContainer.scrollWidth / 2;
+      
+      if (currentPosition >= maxScroll) {
+        currentPosition = 0;
+      }
+      
+      scrollContainer.style.transform = `translateX(-${currentPosition}px)`;
+      animationId = requestAnimationFrame(animate);
+    };
+    
+    animationId = requestAnimationFrame(animate);
+    
+    return () => cancelAnimationFrame(animationId);
+  }, [isPaused]);
 
-  // Duplicate dishes 3 times for seamless infinite loop
-  const allDishes = [...dishes, ...dishes, ...dishes];
+  // Duplicate dishes 2 times for seamless infinite loop
+  const allDishes = [...dishes, ...dishes];
 
   return (
     <section id="fusion-cuisine" className="relative py-12 md:py-20 lg:py-32 bg-white overflow-hidden">
@@ -38,8 +66,8 @@ export default function FusionCuisineSlider() {
           {/* Slider horizontal à droite */}
           <div className="relative -mx-4 sm:-mx-6 md:-ml-12 md:-mr-16 lg:-ml-80 lg:-mr-96 overflow-hidden">
             <div
-              className="flex gap-3 sm:gap-4 md:gap-6"
-              style={{ animation: isPaused ? 'none' : 'scroll 10s linear infinite' }}
+              ref={scrollRef}
+              className="flex gap-3 sm:gap-4 md:gap-6 will-change-transform"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
@@ -69,17 +97,6 @@ export default function FusionCuisineSlider() {
           </div>
         </div>
       </div>
-      
-      <style>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-33.333%);
-          }
-        }
-      `}</style>
     </section>
   );
 }

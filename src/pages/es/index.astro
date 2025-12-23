@@ -1,0 +1,74 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import HeroSlider from "@/components/react/HeroSlider";
+import EditorialIntro from "@/components/astro/EditorialIntro.astro";
+import EmbracedBySeaSlider from "@/components/react/EmbracedBySeaSlider";
+import FusionCuisineSlider from "@/components/react/FusionCuisineSlider";
+
+const title = "El Murmullo — Villas Privadas de Lujo en Zihuatanejo, México | La Casa Que Canta";
+const description =
+  "Villas privadas de lujo exclusivas en Zihuatanejo, México por La Casa Que Canta. Experimente privacidad, vistas al océano y diseño mexicano refinado.";
+const ogImage = "/images/hero/el-murmullo0.webp";
+const preloadImages = [
+  "/images/hero/el-murmullo0.webp",
+  "/images/hero/el-murmullo1.webp",
+  "/images/hero/el-murmullo2.webp",
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Resort",
+  name: "El Murmullo",
+  url: "https://murmullo.studio/es",
+  description,
+  telephone: "+52 984 000 2024",
+  image: [
+    "https://murmullo.studio/images/hero/el-murmullo0.webp",
+    "https://murmullo.studio/images/hero/el-murmullo1.webp",
+    "https://murmullo.studio/images/hero/el-murmullo2.webp",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Carretera Tulum-Boca Paila KM 7",
+    addressLocality: "Tulum",
+    addressRegion: "Quintana Roo",
+    postalCode: "77780",
+    addressCountry: "MX",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 20.121,
+    longitude: -87.461,
+  },
+  amenityFeature: [
+    { "@type": "LocationFeatureSpecification", name: "Alberca Climatizada", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Restaurante en el Lugar", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Bienestar y Spa", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Wi-Fi de Alta Velocidad", value: true },
+  ],
+  sameAs: ["https://www.instagram.com", "https://www.pinterest.com"],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={ogImage}
+  preloadImages={preloadImages}
+  structuredData={structuredData}
+>
+  <script is:inline>
+    if (window.location.hash && window.location.hash.startsWith("#contact")) {
+      window.location.replace("/es/contact");
+    }
+  </script>
+  <section id="home" class="relative h-screen">
+    <HeroSlider client:visible />
+  </section>
+
+  <EditorialIntro id="maison" />
+
+  <FusionCuisineSlider client:visible />
+
+  <EmbracedBySeaSlider client:visible />
+</BaseLayout>

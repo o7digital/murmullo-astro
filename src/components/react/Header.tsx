@@ -1,13 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { slugify } from "@/utils/slugify";
+import { languages } from "@/i18n";
 
-const navLinks = [
-  { label: "Home", href: "/#home" },
-  { label: "Suites", href: "/#suites", hasMegamenu: true },
-  { label: "Embraced by the Sea", href: "/#embraced-sea" },
-  { label: "Fusion Cuisine", href: "/#fusion-cuisine" },
-  { label: "Contact", href: "/contact" },
-];
+interface HeaderProps {
+  currentLang?: string;
+}
+
+const navLinks = {
+  en: [
+    { label: "Home", href: "/#home" },
+    { label: "Suites", href: "/#suites", hasMegamenu: true },
+    { label: "Embraced by the Sea", href: "/#embraced-sea" },
+    { label: "Fusion Cuisine", href: "/#fusion-cuisine" },
+    { label: "Contact", href: "/contact" },
+  ],
+  es: [
+    { label: "Inicio", href: "/es#home" },
+    { label: "Suites", href: "/es#suites", hasMegamenu: true },
+    { label: "Abrazado por el Mar", href: "/es#embraced-sea" },
+    { label: "Cocina Fusión", href: "/es#fusion-cuisine" },
+    { label: "Contacto", href: "/es/contact" },
+  ],
+};
 
 const suites = [
   {
@@ -36,11 +50,15 @@ const suites = [
   },
 ];
 
-export default function Header() {
+export default function Header({ currentLang = 'en' }: HeaderProps) {
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showSuitesMegamenu, setShowSuitesMegamenu] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
+
+  const links = navLinks[currentLang as keyof typeof navLinks] || navLinks.en;
+  const bookNowText = currentLang === 'es' ? 'Reservar Ahora' : 'Book Now';
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     const hashIndex = href.indexOf("#");
@@ -101,14 +119,16 @@ export default function Header() {
 
           {/* Logo - Centre sur mobile, gauche sur desktop */}
           <div className="flex items-center gap-10 lg:flex-1">
-            <img 
-              src="/logo/logo.webp" 
-              alt="Murmullo Logo" 
-              className="h-10 sm:h-12 w-auto object-contain"
-            />
+            <a href={currentLang === 'es' ? '/es' : '/'}>
+              <img 
+                src="/logo/logo.webp" 
+                alt="Murmullo Logo" 
+                className="h-10 sm:h-12 w-auto object-contain"
+              />
+            </a>
             {/* Navigation Desktop */}
             <nav className="hidden items-center gap-8 text-sm font-bold lg:flex ml-20">
-              {navLinks.map((link) => (
+              {links.map((link) => (
                 <div
                   key={link.href}
                   className="relative"
@@ -164,13 +184,51 @@ export default function Header() {
             </nav>
           </div>
           
-          {/* Bouton Book Now - Toujours visible à droite */}
-          <a
-            href="https://be.synxis.com/?adult=1&arrive=2025-12-22&chain=22402&child=0&currency=USD&depart=2025-12-23&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=MUR&rooms=1&src=24C"
-            className="inline-flex items-center gap-2 rounded-full px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold uppercase transition-all hover:-translate-y-0.5 bg-ink text-white hover:bg-ink/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink whitespace-nowrap"
-          >
-            Book Now
-          </a>
+          {/* Language Selector + Book Now */}
+          <div className="flex items-center gap-3">
+            {/* Language Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setLangMenuOpen(!langMenuOpen)}
+                onBlur={() => setTimeout(() => setLangMenuOpen(false), 200)}
+                className="inline-flex items-center gap-1 px-3 py-2 text-sm font-semibold uppercase transition-colors text-ink hover:text-ink/70"
+              >
+                {currentLang === 'en' ? 'EN' : 'ES'}
+                <svg className={`w-4 h-4 transition-transform ${langMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {langMenuOpen && (
+                <div className="absolute right-0 top-full mt-2 w-32 bg-white rounded-lg shadow-lg border border-dusk/10 overflow-hidden z-50">
+                  <a
+                    href="/"
+                    className={`block px-4 py-2.5 text-sm font-semibold uppercase transition-colors ${
+                      currentLang === 'en' ? 'bg-sand text-ink' : 'text-ink hover:bg-sand/50'
+                    }`}
+                  >
+                    English
+                  </a>
+                  <a
+                    href="/es"
+                    className={`block px-4 py-2.5 text-sm font-semibold uppercase transition-colors ${
+                      currentLang === 'es' ? 'bg-sand text-ink' : 'text-ink hover:bg-sand/50'
+                    }`}
+                  >
+                    Español
+                  </a>
+                </div>
+              )}
+            </div>
+            
+            {/* Bouton Book Now - Toujours visible à droite */}
+            <a
+              href="https://be.synxis.com/?adult=1&arrive=2025-12-22&chain=22402&child=0&currency=USD&depart=2025-12-23&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=MUR&rooms=1&src=24C"
+              className="inline-flex items-center gap-2 rounded-full px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold uppercase transition-all hover:-translate-y-0.5 bg-ink text-white hover:bg-ink/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink whitespace-nowrap"
+            >
+              {bookNowText}
+            </a>
+          </div>
         </header>
       </div>
 
@@ -179,7 +237,7 @@ export default function Header() {
         mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`} style={{ top: '72px' }}>
         <nav className="flex flex-col p-6 gap-1 bg-white h-full overflow-y-auto">
-          {navLinks.map((link) => (
+          {links.map((link) => (
             <div key={link.href} className="border-b border-ink/10">
               <a
                 href={link.href}

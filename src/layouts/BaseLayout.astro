@@ -2,6 +2,7 @@
 import "@/styles/global.css";
 import Footer from "@/components/astro/Footer.astro";
 import Header from "@/components/react/Header";
+import { getLangFromUrl } from "@/i18n";
 
 interface Props {
   title: string;
@@ -19,13 +20,15 @@ const {
   structuredData,
 } = Astro.props as Props;
 
+const currentLang = getLangFromUrl(Astro.url);
+
 const canonical = Astro.site
   ? new URL(Astro.url.pathname, Astro.site).toString()
   : Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={currentLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -46,6 +49,11 @@ const canonical = Astro.site
     ))}
     <title>{title}</title>
     <link rel="canonical" href={canonical} />
+    
+    <!-- Alternate language links for SEO -->
+    <link rel="alternate" hreflang="en" href={Astro.site ? new URL(Astro.url.pathname.replace('/es', ''), Astro.site).toString() : '/'} />
+    <link rel="alternate" hreflang="es" href={Astro.site ? new URL(currentLang === 'es' ? Astro.url.pathname : `/es${Astro.url.pathname}`, Astro.site).toString() : '/es'} />
+    <link rel="alternate" hreflang="x-default" href={Astro.site ? new URL(Astro.url.pathname.replace('/es', ''), Astro.site).toString() : '/'} />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
@@ -65,7 +73,7 @@ const canonical = Astro.site
     )}
   </head>
   <body class="min-h-screen bg-sand text-ink">
-    <Header client:load />
+    <Header client:load currentLang={currentLang} />
     <main id="contenu" class="relative isolate overflow-hidden">
       <slot />
     </main>

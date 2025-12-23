@@ -1,0 +1,107 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const title = "Aviso de Privacidad | El Murmullo";
+const description = "Aviso de Privacidad y Política de Protección de Datos de El Murmullo Hotel";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Header avec logo fixe -->
+  <div id="header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+    <div class="relative bg-white/95 backdrop-blur-sm">
+      <header class="container mx-auto flex items-center justify-between px-6 py-4 sm:px-10 sm:py-5">
+        <a href="/es">
+          <img 
+            src="/logo/logo.webp" 
+            alt="Murmullo Logo" 
+            class="h-12 w-auto object-contain"
+          />
+        </a>
+        <nav class="hidden items-center gap-8 text-sm font-bold lg:flex">
+          <a href="/es#home" class="uppercase tracking-wider transition-colors text-ink hover:text-ink/70">Inicio</a>
+          <a href="/es#suites" class="uppercase tracking-wider transition-colors text-ink hover:text-ink/70">Suites</a>
+          <a href="/es/contact" class="uppercase tracking-wider transition-colors text-ink hover:text-ink/70">Contacto</a>
+        </nav>
+        <a
+          href="https://be.synxis.com/?adult=1&arrive=2025-12-22&chain=22402&child=0&currency=USD&depart=2025-12-23&hotel=78821&level=hotel&locale=es-MX&productcurrency=USD&room=MUR&rooms=1&src=24C"
+          class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold uppercase transition-all hover:-translate-y-0.5 bg-white text-ink hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white border border-ink/20"
+        >
+          Reservar Ahora
+        </a>
+      </header>
+    </div>
+    
+    <!-- Dégradé sombre au scroll sous le header -->
+    <div id="gradient-overlay" class="absolute top-full left-0 right-0 h-40 bg-gradient-to-b from-black/30 via-black/15 to-transparent pointer-events-none opacity-0 transition-opacity duration-500"></div>
+  </div>
+
+  <!-- Contenu de la page -->
+  <main class="pt-32 pb-20 bg-sand relative overflow-hidden">
+    <!-- Logo watermark en arrière-plan avec dégradé -->
+    <div class="fixed inset-0 z-0 flex items-center justify-center pointer-events-none">
+      <div class="relative w-[1600px] h-[1600px]">
+        <img 
+          src="/logo/logo-watermark.webp" 
+          alt="" 
+          class="w-full h-full object-contain opacity-[0.25]"
+        />
+        <!-- Dégradé qui s'estompe vers le bas -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent from-40% via-sand/50 via-70% to-sand"></div>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-6 sm:px-10 relative z-10">
+      <div class="max-w-4xl mx-auto bg-white/60 backdrop-blur-sm rounded-2xl shadow-lg p-8 sm:p-12 lg:p-16 border border-white/40">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-ink mb-8">
+          Aviso de Privacidad
+        </h1>
+
+        <div class="prose prose-lg max-w-none text-ink/80">
+          <p class="lead text-xl text-ink/90 mb-8">
+            En El Murmullo valoramos y respetamos su privacidad. Este aviso de privacidad describe cómo recopilamos, usamos y protegemos su información personal.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-ink mt-8 mb-4">Información que Recopilamos</h2>
+          <p>
+            Recopilamos información personal que usted nos proporciona voluntariamente al hacer una reservación, registrarse en nuestro hotel, o comunicarse con nosotros. Esto puede incluir su nombre, dirección de correo electrónico, número de teléfono, información de pago y preferencias de estancia.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-ink mt-8 mb-4">Uso de la Información</h2>
+          <p>
+            Utilizamos su información personal para:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Procesar y gestionar sus reservaciones</li>
+            <li>Proporcionar y mejorar nuestros servicios</li>
+            <li>Comunicarnos con usted sobre su estancia</li>
+            <li>Enviarle información promocional (con su consentimiento)</li>
+            <li>Cumplir con obligaciones legales y reglamentarias</li>
+          </ul>
+
+          <h2 class="text-2xl font-semibold text-ink mt-8 mb-4">Protección de Datos</h2>
+          <p>
+            Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-ink mt-8 mb-4">Sus Derechos</h2>
+          <p>
+            Usted tiene derecho a acceder, rectificar, cancelar u oponerse al tratamiento de sus datos personales. Para ejercer estos derechos, por favor contáctenos a:
+          </p>
+          <p class="font-medium">
+            Email: <a href="mailto:sales.reservations@lacasaquecanta.com" class="text-ink hover:text-ink/70 underline">sales.reservations@lacasaquecanta.com</a><br />
+            Teléfono: +52 755 555 7000
+          </p>
+
+          <h2 class="text-2xl font-semibold text-ink mt-8 mb-4">Cambios a Este Aviso</h2>
+          <p>
+            Nos reservamos el derecho de actualizar este aviso de privacidad en cualquier momento. Los cambios se publicarán en esta página con una fecha de actualización revisada.
+          </p>
+
+          <p class="text-sm text-ink/60 mt-12">
+            Última actualización: Diciembre 2025
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

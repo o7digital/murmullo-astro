@@ -59,6 +59,8 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
 
   const links = navLinks[currentLang as keyof typeof navLinks] || navLinks.en;
   const bookNowText = currentLang === 'es' ? 'Reservar Ahora' : 'Book Now';
+  const formatGuests = (value: string) =>
+    currentLang === 'es' ? value.replace('guests', 'huéspedes') : value;
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     const hashIndex = href.indexOf("#");
@@ -170,7 +172,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
                                 <div className="flex gap-3 text-sm text-white/80">
                                   <span>{suite.size}</span>
                                   <span>•</span>
-                                  <span>{suite.guests}</span>
+                                  <span>{formatGuests(suite.guests)}</span>
                                 </div>
                               </div>
                             </a>
@@ -263,7 +265,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
                       />
                       <div>
                         <div className="text-sm font-medium text-ink">{suite.title}</div>
-                        <div className="text-xs text-ink/60">{suite.size} • {suite.guests}</div>
+                        <div className="text-xs text-ink/60">{suite.size} • {formatGuests(suite.guests)}</div>
                       </div>
                     </a>
                   ))}

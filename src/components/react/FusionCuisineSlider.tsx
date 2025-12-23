@@ -160,7 +160,7 @@ export default function FusionCuisineSlider({ lang = 'en' }: FusionCuisineSlider
         {/* Grid Layout: Texte à gauche, Slider à droite */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Texte à gauche */}
-          <div className="max-w-xl px-4 sm:px-0 lg:-ml-40">
+          <div className="max-w-xl px-4 sm:px-0">
             <span className="text-xl sm:text-2xl uppercase tracking-[0.10em] text-dusk font-semibold block mb-2">
               {t['cuisine.title']}
             </span>

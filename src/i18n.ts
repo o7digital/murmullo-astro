@@ -69,8 +69,21 @@ export const ui = {
     'contact.location': 'Camino Escénico a Playa La Ropa S/N, Zihuatanejo, Guerrero, Mexico',
     
     // Footer
-    'footer.copyright': '© 2025 El Murmullo. All rights reserved.',
-    'footer.privacy': 'Privacy Policy',
+    'footer.linksTitle': 'El Murmullo',
+    'footer.getInTouch': 'Get In Touch',
+    'footer.address': 'Camino Escénico at Playa La Ropa S / N, La Ropa Beach, 40880 Zihuatanejo, Guerrero, México',
+    'footer.reservations': 'Reservations',
+    'footer.whatsapp': 'Sales & Reservations WhatsApp',
+    'footer.frontDesk': 'Front Desk (24 hrs)',
+    'footer.businessHours': 'Sales & Reservations Business Hours: 9 AM to 6 PM (CST) – Closed on Sundays',
+    'footer.newsletterTitle': 'Get Exclusive Deals!',
+    'footer.newsletterDescription': 'Stay updated with exclusive villa offers',
+    'footer.emailPlaceholder': 'Email address',
+    'footer.subscribe': 'Subscribe',
+    'footer.copyright': '© La Casa que Canta. All CopyRights.',
+    'footer.privacy': 'Privacy Notice',
+    'footer.madeBy': 'Made by o7 Digital',
+    'footer.backToTop': 'Back to Top',
     
     // CTA
     'cta.title': 'Ready to Experience El Murmullo?',
@@ -78,10 +91,10 @@ export const ui = {
     'cta.button': 'Book Now',
     
     // Editorial Intro
-    'editorial.title': 'Experience Luxury Redefined',
-    'editorial.intro': 'Nestled on the picturesque cliffs of Zihuatanejo, El Murmullo by La Casa Que Canta offers an unparalleled escape where Mexican tradition meets contemporary elegance.',
-    'editorial.p1': 'This exclusive private villa embodies the spirit of coastal Mexico—a harmonious blend of authentic architecture, refined hospitality, and breathtaking Pacific Ocean views.',
-    'editorial.p2': 'Every detail has been thoughtfully curated to create an intimate sanctuary where the rhythm of the waves sets the pace for your stay.',
+    'editorial.title': 'About El Murmullo',
+    'editorial.intro': 'A sanctuary that whispers, between jungle and sea.',
+    'editorial.p1': 'El Murmullo offers exclusive private villas by La Casa Que Canta, nestled between the jungle and the sea, designed for discerning guests seeking privacy and refined beauty. Each villa features ocean views, authentic design, and exceptional service.',
+    'editorial.p2': 'Wake up to the ocean\'s breath, dine on a fragrant terrace, relax by your private pool as the sun sets. Here, everything whispers: understated luxury, thoughtful cuisine, candlelit evenings. Nothing excessive, just the feeling of belonging.',
   },
   es: {
     'nav.home': 'Inicio',
@@ -146,8 +159,21 @@ export const ui = {
     'contact.location': 'Camino Escénico a Playa La Ropa S/N, Zihuatanejo, Guerrero, México',
     
     // Footer
-    'footer.copyright': '© 2025 El Murmullo. Todos los derechos reservados.',
-    'footer.privacy': 'Política de Privacidad',
+    'footer.linksTitle': 'El Murmullo',
+    'footer.getInTouch': 'Póngase en contacto',
+    'footer.address': 'Camino Escénico a Playa La Ropa S/N, Playa La Ropa, 40880 Zihuatanejo, Guerrero, México',
+    'footer.reservations': 'Reservaciones',
+    'footer.whatsapp': 'Ventas y Reservaciones WhatsApp',
+    'footer.frontDesk': 'Recepción (24 h)',
+    'footer.businessHours': 'Horario de ventas y reservaciones: 9 AM a 6 PM (CST) – Cerrado los domingos',
+    'footer.newsletterTitle': '¡Reciba ofertas exclusivas!',
+    'footer.newsletterDescription': 'Manténgase al día con ofertas exclusivas de nuestras villas',
+    'footer.emailPlaceholder': 'Correo electrónico',
+    'footer.subscribe': 'Suscribirse',
+    'footer.copyright': '© La Casa que Canta. Todos los derechos reservados.',
+    'footer.privacy': 'Aviso de Privacidad',
+    'footer.madeBy': 'Hecho por o7 Digital',
+    'footer.backToTop': 'Volver arriba',
     
     // CTA
     'cta.title': '¿Listo para Experimentar El Murmullo?',
@@ -155,10 +181,10 @@ export const ui = {
     'cta.button': 'Reservar Ahora',
     
     // Editorial Intro
-    'editorial.title': 'Experimente el Lujo Redefinido',
-    'editorial.intro': 'Ubicado en los pintorescos acantilados de Zihuatanejo, El Murmullo by La Casa Que Canta ofrece una escapada incomparable donde la tradición mexicana se encuentra con la elegancia contemporánea.',
-    'editorial.p1': 'Esta villa privada exclusiva encarna el espíritu de la costa mexicana: una mezcla armoniosa de arquitectura auténtica, hospitalidad refinada y vistas impresionantes del Océano Pacífico.',
-    'editorial.p2': 'Cada detalle ha sido cuidadosamente seleccionado para crear un santuario íntimo donde el ritmo de las olas marca el ritmo de su estancia.',
+    'editorial.title': 'Sobre El Murmullo',
+    'editorial.intro': 'Un santuario que susurra, entre la selva y el mar.',
+    'editorial.p1': 'El Murmullo ofrece villas privadas exclusivas de La Casa Que Canta, enclavadas entre la selva y el mar, pensadas para huéspedes exigentes que buscan privacidad y belleza refinada. Cada villa ofrece vistas al océano, diseño auténtico y un servicio excepcional.',
+    'editorial.p2': 'Despierte con el aliento del océano, cene en una terraza perfumada, relájese junto a su piscina privada mientras se pone el sol. Aquí, todo susurra: lujo sutil, cocina cuidada, noches a la luz de las velas. Nada excesivo, solo la sensación de pertenecer.',
   },
 } as const;
 

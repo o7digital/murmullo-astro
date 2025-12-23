@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { suites } from "@/data/suites";
+import { suiteTranslations } from "@/data/suites.es";
 import { slugify } from "@/utils/slugify";
 import SuiteGallery from "@/components/react/SuiteGallery";
 
@@ -12,20 +13,29 @@ export function getStaticPaths() {
 }
 
 const { suite } = Astro.props as { suite: (typeof suites)[number] };
-const displayTitle = suite.displayTitle ?? suite.title;
+const suiteSlug = slugify(suite.title);
+const suiteTranslation = suiteTranslations[suiteSlug];
+const displayTitle = suiteTranslation?.displayTitle ?? suite.displayTitle ?? suite.title;
 const title = `${displayTitle} | El Murmullo`;
-const description = suite.description;
+const description = suiteTranslation?.description ?? suite.description;
+const tagline = suiteTranslation?.tagline ?? suite.tagline;
 const defaultBookingUrl =
   "https://be.synxis.com/?adult=1&arrive=2025-12-22&chain=22402&child=0&currency=USD&depart=2025-12-23&hotel=78821&level=hotel&locale=es-MX&productcurrency=USD&room=MUR&rooms=1&src=24C";
 const bookingUrl = suite.bookingUrl ?? defaultBookingUrl;
 
-// Traductions
-const translations = {
+const suiteInfo = {
   size: suite.size,
-  view: suite.view === "Ocean Views" ? "Vista al Océano" : suite.view,
-  guests: suite.guests.replace("guests", "huéspedes"),
-  bed: suite.bed.replace("King bed", "Cama King").replace("Queen bed", "Cama Queen"),
+  view: suiteTranslation?.view ?? suite.view,
+  guests: suiteTranslation?.guests ?? suite.guests,
+  bed: suiteTranslation?.bed ?? suite.bed,
 };
+
+const suiteDetails = suite.details?.map((detail, index) => {
+  const translatedDetail = suiteTranslation?.details?.[index];
+  return translatedDetail ? { ...detail, ...translatedDetail } : detail;
+}) ?? [];
+
+const suiteAmenities = suiteTranslation?.amenities ?? suite.amenities;
 ---
 
 <BaseLayout
@@ -74,7 +84,7 @@ const translations = {
       <div class="w-full pb-16 pt-32">
         <div class="max-w-6xl mx-auto px-6 sm:px-10">
           <h1 class="text-5xl sm:text-6xl lg:text-7xl font-serif text-white">{displayTitle}</h1>
-          <p class="mt-4 max-w-2xl text-lg text-white/90">{suite.tagline}</p>
+          <p class="mt-4 max-w-2xl text-lg text-white/90">{tagline}</p>
         </div>
       </div>
     </div>
@@ -99,33 +109,45 @@ const translations = {
           
           {/* Détails de la suite */}
           <div class="mb-8 space-y-1 text-ink/80">
-            <p class="text-base font-medium">{translations.size}</p>
-            <p class="text-sm">{translations.view}</p>
-            <p class="text-sm">{translations.guests}</p>
-            <p class="text-sm">{translations.bed}</p>
+            <p class="text-base font-medium">{suiteInfo.size}</p>
+            <p class="text-sm">{suiteInfo.view}</p>
+            <p class="text-sm">{suiteInfo.guests}</p>
+            <p class="text-sm">{suiteInfo.bed}</p>
           </div>
 
           <div class="space-y-6">
             <div>
               <h3 class="text-xl font-medium text-ink mb-3">Descripción</h3>
-              <p class="text-ink/70 leading-relaxed">{suite.description}</p>
+              <p class="text-ink/70 leading-relaxed">{description}</p>
             </div>
 
-            {suite.details && suite.details.map((detail) => (
+            {suiteDetails.length > 0 && (
               <div>
-                <h3 class="text-xl font-medium text-ink mb-3">{detail.title === "Amenities" ? "Comodidades" : detail.title}</h3>
-                <ul class="space-y-2">
-                  {detail.amenities && detail.amenities.map((amenity) => (
-                    <li class="flex items-start gap-2 text-ink/70">
-                      <svg class="h-5 w-5 text-[#8B9F7E] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                      </svg>
-                      <span>{amenity}</span>
-                    </li>
+                <h3 class="text-xl font-medium text-ink mb-3">Detalles</h3>
+                <div class="space-y-4">
+                  {suiteDetails.map((detail) => (
+                    <div>
+                      <h4 class="text-base font-semibold text-ink">{detail.label}</h4>
+                      <p class="text-sm text-ink/70 leading-relaxed">{detail.copy}</p>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
-            ))}
+            )}
+
+            <div>
+              <h3 class="text-xl font-medium text-ink mb-3">Comodidades</h3>
+              <ul class="space-y-2">
+                {suiteAmenities.map((amenity) => (
+                  <li class="flex items-start gap-2 text-ink/70">
+                    <svg class="h-5 w-5 text-[#8B9F7E] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span>{amenity}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             <div class="pt-6 border-t border-ink/10">
               <a

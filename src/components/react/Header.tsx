@@ -59,6 +59,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
 
   const links = navLinks[currentLang as keyof typeof navLinks] || navLinks.en;
   const bookNowText = currentLang === 'es' ? 'Reservar Ahora' : 'Book Now';
+  const suiteBasePath = currentLang === 'es' ? '/es/suites' : '/suites';
   const formatGuests = (value: string) =>
     currentLang === 'es' ? value.replace('guests', 'huéspedes') : value;
 
@@ -154,7 +155,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
                           {suites.map((suite) => (
                             <a
                               key={suite.title}
-                              href={`/suites/${slugify(suite.title)}`}
+                              href={`${suiteBasePath}/${slugify(suite.title)}`}
                               className="group relative overflow-hidden rounded-2xl bg-ink shadow-lg"
                             >
                               <div className="aspect-[4/3] relative overflow-hidden">
@@ -254,7 +255,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
                   {suites.map((suite) => (
                     <a
                       key={suite.title}
-                      href={`/suites/${slugify(suite.title)}`}
+                      href={`${suiteBasePath}/${slugify(suite.title)}`}
                       onClick={() => setMobileMenuOpen(false)}
                       className="flex items-center gap-3 p-2 rounded-lg hover:bg-sand/30 transition-colors"
                     >

@@ -88,7 +88,7 @@ const translations = {
         <div class="lg:sticky lg:top-24 self-start">
           <SuiteGallery 
             client:visible
-            images={[suite.heroImage, ...suite.details.map(d => d.image), ...suite.gallery]}
+            images={[suite.heroImage, ...(suite.details?.map(d => d.image) || []), ...(suite.gallery || [])]}
             title={displayTitle}
           />
         </div>
@@ -111,7 +111,7 @@ const translations = {
               <p class="text-ink/70 leading-relaxed">{suite.description}</p>
             </div>
 
-            {suite.details.map((detail) => (
+            {suite.details && suite.details.map((detail) => (
               <div>
                 <h3 class="text-xl font-medium text-ink mb-3">{detail.title === "Amenities" ? "Comodidades" : detail.title}</h3>
                 <ul class="space-y-2">

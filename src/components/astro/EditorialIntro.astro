@@ -1,14 +1,11 @@
 ---
 import AboutSlider from "@/components/react/AboutSlider";
-import { getLangFromUrl, useTranslations } from "@/i18n";
 
 interface Props {
   id?: string;
 }
 
 const { id } = Astro.props as Props;
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
 
 <section id={id} class="relative overflow-hidden">
@@ -17,15 +14,15 @@ const t = useTranslations(lang);
     <!-- Texte en haut -->
     <div class="bg-gradient-to-br from-sand to-mist/60 px-6 py-12 sm:px-8 sm:py-16">
       <div class="max-w-2xl mx-auto space-y-4 sm:space-y-6">
-        <h2 class="text-xl sm:text-2xl uppercase tracking-[0.10em] text-dusk font-semibold">{t('editorial.title')}</h2>
+        <h2 class="text-xl sm:text-2xl uppercase tracking-[0.10em] text-dusk font-semibold">About El Murmullo</h2>
         <p class="text-3xl leading-[1.05] sm:text-4xl md:text-5xl font-serif text-dusk">
-          {t('editorial.intro')}
+          A sanctuary that whispers, between jungle and sea.
         </p>
         <p class="text-base sm:text-lg leading-relaxed text-ink/80">
-          {t('editorial.p1')}
+          El Murmullo offers exclusive private villas by La Casa Que Canta, nestled between the jungle and the sea, designed for discerning guests seeking privacy and refined beauty. Each villa features ocean views, authentic design, and exceptional service.
         </p>
         <p class="text-base sm:text-lg leading-relaxed text-ink/80">
-          {t('editorial.p2')}
+          Wake up to the ocean's breath, dine on a fragrant terrace, relax by your private pool as the sun sets. Here, everything whispers: understated luxury, thoughtful cuisine, candlelit evenings. Nothing excessive, just the feeling of belonging.
         </p>
       </div>
     </div>
@@ -41,15 +38,15 @@ const t = useTranslations(lang);
     <!-- Texte à gauche -->
     <div class="relative flex items-center bg-gradient-to-br from-sand to-mist/60 px-12">
       <div class="w-full space-y-6">
-        <h2 class="text-2xl uppercase tracking-[0.10em] text-dusk font-semibold">{t('editorial.title')}</h2>
+        <h2 class="text-2xl uppercase tracking-[0.10em] text-dusk font-semibold">About El Murmullo</h2>
         <p class="text-5xl xl:text-6xl leading-[1.05] font-serif text-dusk">
-          {t('editorial.intro')}
+          A sanctuary that whispers, between jungle and sea.
         </p>
         <p class="text-lg leading-relaxed text-ink/80">
-          {t('editorial.p1')}
+          El Murmullo offers exclusive private villas by La Casa Que Canta, nestled between the jungle and the sea, designed for discerning guests seeking privacy and refined beauty. Each villa features ocean views, authentic design, and exceptional service.
         </p>
         <p class="text-lg leading-relaxed text-ink/80">
-          {t('editorial.p2')}
+          Wake up to the ocean's breath, dine on a fragrant terrace, relax by your private pool as the sun sets. Here, everything whispers: understated luxury, thoughtful cuisine, candlelit evenings. Nothing excessive, just the feeling of belonging.
         </p>
       </div>
     </div>

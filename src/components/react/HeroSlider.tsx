@@ -11,7 +11,7 @@ type Slide = {
 const slides: Slide[] = [
   {
     src: "/images/hero/el-murmullo0.webp",
-    title: "El Murmullo\nOur Luxury Villa by La Casa Que Canta",
+    title: "El Murmullo",
     caption: "An exclusive private villa overlooking the Pacific Ocean in Zihuatanejo, Mexico.",
     alt: "El Murmullo luxury villa by La Casa Que Canta in Zihuatanejo, Mexico",
   },

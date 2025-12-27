@@ -134,7 +134,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
               {links.map((link) => (
                 <div
                   key={link.href}
-                  className="static"
+                  className="relative"
                   onMouseEnter={() => link.hasMegamenu && setShowSuitesMegamenu(true)}
                   onMouseLeave={() => link.hasMegamenu && setShowSuitesMegamenu(false)}
                 >

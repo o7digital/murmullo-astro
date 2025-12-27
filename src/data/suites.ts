@@ -16,6 +16,7 @@ export type Suite = {
   rate: string;
   rateOriginal?: string;
   bookingUrl?: string;
+  bookingUrlEs?: string;
   heroImage: string;
   highlights: string[];
   details: SuiteDetail[];
@@ -36,7 +37,9 @@ export const suites: Suite[] = [
     rate: "$1,490",
     rateOriginal: "$1,690",
     bookingUrl:
-      "https://be.synxis.com/?adult=1&arrive=2025-12-22&chain=22402&child=0&currency=USD&depart=2025-12-23&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=PNT&rooms=1&src=24C",
+      "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=PNT&rooms=1&src=24C",
+    bookingUrlEs:
+      "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=es-MX&productcurrency=USD&room=PNT&rooms=1&src=24C",
     heroImage: "/images/suites/sra-tentacion/exclusive-boutique-villa-hotel-zihuatanejo-ixtapa-mexico-01.webp",
     highlights: [
       "Private terrace with ocean horizon",
@@ -96,7 +99,9 @@ export const suites: Suite[] = [
     rate: "$890",
     rateOriginal: "$1,050",
     bookingUrl:
-      "https://be.synxis.com/?adult=1&arrive=2025-12-22&chain=22402&child=0&currency=USD&depart=2025-12-23&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=GAR&rooms=1&src=24C",
+      "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=GAR&rooms=1&src=24C",
+    bookingUrlEs:
+      "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=es-MX&productcurrency=USD&room=GAR&rooms=1&src=24C",
     heroImage: "/images/suites/garden-suite/garden-1.webp",
     highlights: [
       "Garden-facing private terrace",
@@ -155,7 +160,9 @@ export const suites: Suite[] = [
     rate: "$990",
     rateOriginal: "$1,150",
     bookingUrl:
-      "https://be.synxis.com/?adult=1&arrive=2025-12-22&chain=22402&child=0&currency=USD&depart=2025-12-23&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=JRS&rooms=1&src=24C",
+      "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=JRS&rooms=1&src=24C",
+    bookingUrlEs:
+      "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=es-MX&productcurrency=USD&room=JRS&rooms=1&src=24C",
     heroImage: "/images/suites/junior-suite-senerata-surena/junior-suite1.webp",
     highlights: [
       "Panoramic windows with sea breeze",
@@ -214,7 +221,9 @@ export const suites: Suite[] = [
     rate: "$1,050",
     rateOriginal: "$1,200",
     bookingUrl:
-      "https://be.synxis.com/?adult=1&arrive=2025-12-22&chain=22402&child=0&currency=USD&depart=2025-12-23&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=JRS&rooms=1&src=24C",
+      "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=JRS&rooms=1&src=24C",
+    bookingUrlEs:
+      "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=es-MX&productcurrency=USD&room=JRS&rooms=1&src=24C",
     heroImage: "/images/suites/junior-suite-senorita-sonrisa/suite-1.webp",
     highlights: [
       "Golden-hour light and airy interiors",

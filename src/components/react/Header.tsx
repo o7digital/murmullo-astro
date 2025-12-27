@@ -134,7 +134,6 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
               {links.map((link) => (
                 <div
                   key={link.href}
-                  className="relative"
                   onMouseEnter={() => link.hasMegamenu && setShowSuitesMegamenu(true)}
                   onMouseLeave={() => link.hasMegamenu && setShowSuitesMegamenu(false)}
                 >
@@ -149,8 +148,8 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
                   
                   {/* Megamenu pour Suites */}
                   {link.hasMegamenu && showSuitesMegamenu && (
-                    <div className="absolute left-0 right-0 top-full">
-                      <div className="bg-white rounded-2xl shadow-2xl p-12 mx-6 border border-dusk/10">
+                    <div className="fixed left-0 right-0 top-[72px] z-40">
+                      <div className="bg-white rounded-2xl shadow-2xl p-12 mx-6 border border-dusk/10 mt-1">
                         <div className="grid grid-cols-4 gap-8">
                           {suites.map((suite) => (
                             <a

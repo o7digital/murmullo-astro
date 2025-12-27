@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { slugify } from "@/utils/slugify";
 import { languages } from "@/i18n";
 
@@ -56,6 +56,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
   const [showSuitesMegamenu, setShowSuitesMegamenu] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const closeTimeoutRef = useRef<number | null>(null);
 
   const links = navLinks[currentLang as keyof typeof navLinks] || navLinks.en;
   const bookNowText = currentLang === 'es' ? 'Reservar Ahora' : 'Book Now';
@@ -84,6 +85,32 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 300);
   };
+
+  const openSuitesMenu = () => {
+    if (closeTimeoutRef.current) {
+      window.clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setShowSuitesMegamenu(true);
+  };
+
+  const scheduleCloseSuitesMenu = () => {
+    if (closeTimeoutRef.current) {
+      window.clearTimeout(closeTimeoutRef.current);
+    }
+    closeTimeoutRef.current = window.setTimeout(() => {
+      setShowSuitesMegamenu(false);
+      closeTimeoutRef.current = null;
+    }, 200);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        window.clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -134,8 +161,9 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
               {links.map((link) => (
                 <div
                   key={link.href}
-                  onMouseEnter={() => link.hasMegamenu && setShowSuitesMegamenu(true)}
-                  onMouseLeave={() => link.hasMegamenu && setShowSuitesMegamenu(false)}
+                  className="relative"
+                  onMouseEnter={link.hasMegamenu ? openSuitesMenu : undefined}
+                  onMouseLeave={link.hasMegamenu ? scheduleCloseSuitesMenu : undefined}
                 >
                   <a
                     href={link.href}
@@ -149,11 +177,11 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
                   {/* Megamenu pour Suites */}
                   {link.hasMegamenu && showSuitesMegamenu && (
                     <div 
-                      className="fixed left-0 right-0 top-[60px] z-40 pb-4"
-                      onMouseEnter={() => setShowSuitesMegamenu(true)}
-                      onMouseLeave={() => setShowSuitesMegamenu(false)}
+                      className="fixed left-0 right-0 top-[88px] pt-4 flex justify-center"
+                      onMouseEnter={openSuitesMenu}
+                      onMouseLeave={scheduleCloseSuitesMenu}
                     >
-                      <div className="bg-white rounded-2xl shadow-2xl p-12 mx-6 border border-dusk/10 mt-4">
+                      <div className="bg-white rounded-2xl shadow-2xl p-12 mx-6 border border-dusk/10 max-w-[1200px] w-full">
                         <div className="grid grid-cols-4 gap-8">
                           {suites.map((suite) => (
                             <a

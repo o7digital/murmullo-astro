@@ -149,11 +149,11 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
                   {/* Megamenu pour Suites */}
                   {link.hasMegamenu && showSuitesMegamenu && (
                     <div 
-                      className="fixed left-0 right-0 top-[72px] z-40 pt-1"
+                      className="fixed left-0 right-0 top-[60px] z-40 pb-4"
                       onMouseEnter={() => setShowSuitesMegamenu(true)}
                       onMouseLeave={() => setShowSuitesMegamenu(false)}
                     >
-                      <div className="bg-white rounded-2xl shadow-2xl p-12 mx-6 border border-dusk/10">
+                      <div className="bg-white rounded-2xl shadow-2xl p-12 mx-6 border border-dusk/10 mt-4">
                         <div className="grid grid-cols-4 gap-8">
                           {suites.map((suite) => (
                             <a

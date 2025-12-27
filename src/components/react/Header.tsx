@@ -149,8 +149,8 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
                   
                   {/* Megamenu pour Suites */}
                   {link.hasMegamenu && showSuitesMegamenu && (
-                    <div className="absolute left-0 right-0 top-full pt-0">
-                      <div className="bg-white rounded-2xl shadow-2xl p-12 mx-6 border border-dusk/10 mt-4">
+                    <div className="absolute left-0 right-0 top-full">
+                      <div className="bg-white rounded-2xl shadow-2xl p-12 mx-6 border border-dusk/10">
                         <div className="grid grid-cols-4 gap-8">
                           {suites.map((suite) => (
                             <a

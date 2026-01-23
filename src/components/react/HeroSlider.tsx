@@ -119,7 +119,7 @@ export default function HeroSlider({ lang = 'en' }: HeroSliderProps) {
           aria-label={lang === "es" ? "Volver al inicio" : "Back to home"}
         >
           <img
-            src="/logo/EL%20MURMULLO%20LOGOTIPO%20fondo%20blanco%20%20.png"
+            src="/logo/el-murmullo-logotipo-fondo-blanco.png"
             alt="El Murmullo"
             className="w-auto object-contain h-[68px] sm:h-[84px] md:h-[104px]"
             loading="eager"

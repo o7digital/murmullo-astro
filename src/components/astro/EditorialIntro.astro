@@ -11,8 +11,13 @@ const { id, lang = "en" } = Astro.props as Props;
 const t = ui[lang] ?? ui.en;
 const title = t["editorial.title"];
 const intro = t["editorial.intro"];
-const paragraph1 = t["editorial.p1"];
-const paragraph2 = t["editorial.p2"];
+const paragraphs = [
+  t["editorial.p1"],
+  t["editorial.p2"],
+  t["editorial.p3"],
+  t["editorial.p4"],
+  t["editorial.p5"],
+];
 ---
 
 <section id={id} class="relative overflow-hidden">
@@ -25,8 +30,9 @@ const paragraph2 = t["editorial.p2"];
         <p class="text-3xl leading-[1.05] sm:text-4xl md:text-5xl font-serif text-dusk">
           {intro}
         </p>
-        <p class="text-base sm:text-lg leading-relaxed text-ink/80">{paragraph1}</p>
-        <p class="text-base sm:text-lg leading-relaxed text-ink/80">{paragraph2}</p>
+        {paragraphs.map((paragraph, index) => (
+          <p class="text-base sm:text-lg leading-relaxed text-ink/80" key={index}>{paragraph}</p>
+        ))}
       </div>
     </div>
     
@@ -45,8 +51,9 @@ const paragraph2 = t["editorial.p2"];
         <p class="text-5xl xl:text-6xl leading-[1.05] font-serif text-dusk">
           {intro}
         </p>
-        <p class="text-lg leading-relaxed text-ink/80">{paragraph1}</p>
-        <p class="text-lg leading-relaxed text-ink/80">{paragraph2}</p>
+        {paragraphs.map((paragraph, index) => (
+          <p class="text-lg leading-relaxed text-ink/80" key={index}>{paragraph}</p>
+        ))}
       </div>
     </div>
 

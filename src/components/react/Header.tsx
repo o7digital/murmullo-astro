@@ -149,12 +149,8 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
 
           {/* Logo - Centre sur mobile, gauche sur desktop */}
           <div className="flex items-center gap-10 lg:flex-1">
-            <a href={currentLang === 'es' ? '/es' : '/'}>
-              <img 
-                src="/logo/logo.webp" 
-                alt="Murmullo Logo" 
-                className="h-10 sm:h-12 w-auto object-contain"
-              />
+            <a href={currentLang === 'es' ? '/es' : '/'} className="sr-only">
+              {currentLang === 'es' ? 'Inicio' : 'Home'}
             </a>
             {/* Navigation Desktop */}
             <nav className="hidden items-center gap-8 text-sm font-bold lg:flex ml-20">

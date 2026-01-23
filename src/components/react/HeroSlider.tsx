@@ -111,6 +111,23 @@ export default function HeroSlider({ lang = 'en' }: HeroSliderProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
       </div>
 
+      {/* Logo overlay under the menu */}
+      <div className="pointer-events-none absolute left-4 top-20 z-20 sm:left-8 sm:top-24 lg:left-12 lg:top-28">
+        <a
+          href={lang === "es" ? "/es" : "/"}
+          className="pointer-events-auto inline-flex rounded-2xl bg-white px-4 py-3 shadow-lg ring-1 ring-white"
+          aria-label={lang === "es" ? "Volver al inicio" : "Back to home"}
+        >
+          <img
+            src="/logo/EL%20MURMULLO%20LOGOTIPO%20fondo%20blanco%20%20.png"
+            alt="El Murmullo"
+            className="w-auto object-contain h-[68px] sm:h-[84px] md:h-[104px]"
+            loading="eager"
+            decoding="async"
+          />
+        </a>
+      </div>
+
       {/* Texte du slider - En bas à gauche comme Zotela */}
       <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-20 sm:px-10 sm:pb-24 lg:px-16 lg:pb-28">
         <div className="max-w-4xl space-y-4">

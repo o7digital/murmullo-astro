@@ -15,11 +15,13 @@ export default function FusionCuisineSlider({ lang = 'en' }: FusionCuisineSlider
     { name: t['cuisine.dish4'], image: "/images/cuisines/cuisine6.webp" },
     { name: t['cuisine.dish5'], image: "/images/cuisines/cusine2.webp" },
   ];
-  const defaultZoom = 2.5;
+  const MIN_ZOOM = 1;
+  const MAX_ZOOM = 3;
+  const defaultZoom = 1.8;
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(MIN_ZOOM);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
@@ -54,13 +56,13 @@ export default function FusionCuisineSlider({ lang = 'en' }: FusionCuisineSlider
   };
 
   const handleZoomIn = () => {
-    setZoom(prev => Math.min(prev + 0.5, 4));
+    setZoom(prev => Math.min(prev + 0.5, MAX_ZOOM));
   };
 
   const handleZoomOut = () => {
     setZoom(prev => {
-      const newZoom = Math.max(prev - 0.5, 1);
-      if (newZoom === 1) {
+      const newZoom = Math.max(prev - 0.5, MIN_ZOOM);
+      if (newZoom === MIN_ZOOM) {
         setPosition({ x: 0, y: 0 });
       }
       return newZoom;
@@ -92,11 +94,11 @@ export default function FusionCuisineSlider({ lang = 'en' }: FusionCuisineSlider
       if (lightboxImage && lightboxRef.current) {
         e.preventDefault();
         if (e.deltaY < 0) {
-          setZoom(prev => Math.min(prev + 0.5, 4));
+          setZoom(prev => Math.min(prev + 0.5, MAX_ZOOM));
         } else {
           setZoom(prev => {
-            const newZoom = Math.max(prev - 0.5, 1);
-            if (newZoom === 1) {
+            const newZoom = Math.max(prev - 0.5, MIN_ZOOM);
+            if (newZoom === MIN_ZOOM) {
               setPosition({ x: 0, y: 0 });
             }
             return newZoom;
@@ -158,9 +160,9 @@ export default function FusionCuisineSlider({ lang = 'en' }: FusionCuisineSlider
     <section id="fusion-cuisine" className="relative py-12 md:py-20 lg:py-32 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Grid Layout: Texte à gauche, Slider à droite */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
           {/* Texte à gauche */}
-          <div className="max-w-xl px-4 sm:px-0">
+          <div className="max-w-xl px-4 sm:px-0 lg:col-span-4 lg:pr-8 xl:pr-10">
             <span className="text-xl sm:text-2xl uppercase tracking-[0.10em] text-dusk font-semibold block mb-2">
               {t['cuisine.title']}
             </span>
@@ -173,7 +175,7 @@ export default function FusionCuisineSlider({ lang = 'en' }: FusionCuisineSlider
           </div>
 
           {/* Slider horizontal à droite */}
-          <div className="relative -mx-4 sm:-mx-6 md:-ml-12 md:-mr-16 lg:-ml-80 lg:-mr-96 overflow-hidden">
+          <div className="relative -mx-4 sm:-mx-6 lg:-mx-4 xl:-mx-12 lg:col-span-8 overflow-hidden">
             <div
               ref={scrollRef}
               className="flex gap-3 sm:gap-4 md:gap-6 will-change-transform"
@@ -183,7 +185,7 @@ export default function FusionCuisineSlider({ lang = 'en' }: FusionCuisineSlider
               {allDishes.map((dish, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] lg:w-[450px] group cursor-pointer"
+                  className="flex-shrink-0 w-[300px] sm:w-[360px] md:w-[440px] lg:w-[520px] group cursor-pointer"
                   onClick={() => openLightbox(dish.image)}
                 >
                   <div className="relative h-[380px] sm:h-[450px] md:h-[550px] lg:h-[600px] overflow-hidden rounded-lg shadow-xl">
@@ -225,7 +227,7 @@ export default function FusionCuisineSlider({ lang = 'en' }: FusionCuisineSlider
             e.stopPropagation();
             closeLightbox();
           }}
-          className="absolute top-4 right-4 bg-white hover:bg-gray-200 text-black w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-2xl sm:text-3xl font-bold z-20 transition-all shadow-lg hover:scale-110"
+          className="absolute top-4 right-4 bg-white hover:bg-gray-200 text-black w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-2xl sm:text-3xl font-bold z-20 transition-all shadow-lg hover:scale-110 border border-black/10"
           aria-label="Close"
           title="Close (Esc)"
         >
@@ -249,11 +251,11 @@ export default function FusionCuisineSlider({ lang = 'en' }: FusionCuisineSlider
             <div className="h-32 w-1 bg-white/20 rounded-full relative">
               <div 
                 className="absolute bottom-0 w-full bg-white rounded-full transition-all"
-                style={{ height: `${((zoom - 1) / 3) * 100}%` }}
+                style={{ height: `${((zoom - MIN_ZOOM) / (MAX_ZOOM - MIN_ZOOM)) * 100}%` }}
               />
               <div 
                 className="absolute w-4 h-4 bg-white rounded-full -left-1.5 transition-all"
-                style={{ bottom: `calc(${((zoom - 1) / 3) * 100}% - 8px)` }}
+                style={{ bottom: `calc(${((zoom - MIN_ZOOM) / (MAX_ZOOM - MIN_ZOOM)) * 100}% - 8px)` }}
               />
             </div>
             <div className="text-white text-xs font-semibold bg-white/20 px-2 py-1 rounded">

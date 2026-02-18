@@ -169,13 +169,13 @@ export default function AboutSlider({ lang = "en" }: AboutSliderProps) {
       onMouseLeave={() => setPaused(false)}
     >
       {/* Images du slider */}
-      <div className="relative h-full w-full cursor-pointer" onClick={() => openLightbox(images[activeIndex])}>
+      <div className="relative h-full w-full cursor-pointer bg-ink/20" onClick={() => openLightbox(images[activeIndex])}>
         {images.map((src, index) => (
           <img
             key={src}
             src={src}
             alt={`Murmullo ${index + 1}`}
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+            className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-1000 ${
               index === activeIndex ? "opacity-100" : "opacity-0"
             }`}
             loading={index === 0 ? "eager" : "lazy"}

@@ -31,12 +31,8 @@ const labels = {
 
 const images = [
   "/images/hero/sous-hero/el-murmullo1.webp",
-  "/images/hero/sous-hero/el-murmullo2.webp",
-  "/images/hero/sous-hero/el-murmullo3.webp",
   "/images/hero/sous-hero/el-murmullo4.webp",
   "/images/hero/sous-hero/el-murmullo5.webp",
-  "/images/hero/sous-hero/el-murmullo6.webp",
-  "/images/hero/sous-hero/el-murmullo7.webp",
   "/images/hero/sous-hero/el-murmullo8.webp",
 ];
 

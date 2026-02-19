@@ -112,7 +112,7 @@ export default function HeroSlider({ lang = 'en' }: HeroSliderProps) {
       </div>
 
       {/* Logo overlay in the lower-right corner */}
-      <div className="pointer-events-none absolute bottom-6 right-4 z-20 sm:bottom-8 sm:right-8 lg:bottom-10 lg:right-12">
+      <div className="pointer-events-none absolute bottom-[2.7rem] right-4 z-20 sm:bottom-[3.2rem] sm:right-8 lg:bottom-[3.7rem] lg:right-12">
         <a
           href={lang === "es" ? "/es" : "/"}
           className="pointer-events-auto inline-flex rounded-2xl bg-white px-4 py-3 shadow-lg ring-1 ring-white"

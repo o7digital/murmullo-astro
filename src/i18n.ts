@@ -93,11 +93,11 @@ export const ui = {
     // Editorial Intro
     'editorial.title': 'About El Murmullo',
     'editorial.intro': 'A sanctuary that whispers, between jungle and sea.',
-    'editorial.p1': 'Set above the bay of Zihuatanejo, El Murmullo is a private retreat where tropical nature and refined architecture meet in calm balance.',
-    'editorial.p2': 'Each villa is designed for privacy and comfort, with shaded terraces, private pools, and open interiors that frame panoramic ocean views.',
-    'editorial.p3': 'As an extension of La Casa Que Canta, the experience pairs discreet service and thoughtful cuisine with a slower rhythm between jungle and sea.',
-    'editorial.p4': 'El Murmullo is not about excess, but about balance. Understated luxury, attentive service, and a sense of belonging define the experience. Guests enjoy the privacy of a secluded villa while benefiting from the exceptional standards, culinary refinement, and personalized attention associated with La Casa Que Canta. Thoughtful cuisine, candlelit evenings, and discreet service create moments that feel effortless yet deeply memorable.',
-    'editorial.p5': 'Nestled between jungle and sea, El Murmullo invites you to slow down, to listen, and to reconnect with nature, with silence, and with yourself. Nothing here is imposed. Everything whispers.',
+    'editorial.p1': 'Overlooking the bay of Zihuatanejo, El Murmullo is a private retreat where tropical vegetation, sea light, and refined architecture create a calm sense of place.',
+    'editorial.p2': 'Conceived as an extension of La Casa Que Canta, the property offers an intimate collection of villas designed for privacy, comfort, and personalized stays.',
+    'editorial.p3': 'Mediterranean nautical elegance meets Mexican coastal character through natural materials, open spaces, and interiors that welcome breeze, light, and silence.',
+    'editorial.p4': 'Daily life flows gently between jungle and ocean: shaded terraces, private pools, and panoramic views invite rest from morning to sunset.',
+    'editorial.p5': 'With discreet service, thoughtful cuisine, and understated luxury, El Murmullo delivers a serene experience that feels both exclusive and deeply personal.',
   },
   es: {
     'nav.home': 'Inicio',
@@ -186,11 +186,11 @@ export const ui = {
     // Editorial Intro
     'editorial.title': 'Sobre El Murmullo',
     'editorial.intro': 'Un santuario que susurra, entre la selva y el mar.',
-    'editorial.p1': 'Sobre la bahía de Zihuatanejo, El Murmullo es un refugio privado donde la naturaleza tropical y la arquitectura refinada conviven en equilibrio.',
-    'editorial.p2': 'Cada villa está diseñada para privacidad y confort, con terrazas sombreadas, albercas privadas e interiores abiertos con vistas panorámicas al mar.',
-    'editorial.p3': 'Como extensión de La Casa Que Canta, la experiencia une servicio discreto y cocina cuidada con un ritmo sereno entre selva y mar.',
-    'editorial.p4': 'El Murmullo no se trata de exceso, sino de equilibrio. El lujo discreto, el servicio atento y un sentido de pertenencia definen la experiencia. Los huéspedes disfrutan la privacidad de una villa apartada mientras se benefician de los estándares excepcionales, la gastronomía refinada y la atención personalizada de La Casa Que Canta. Una cocina cuidada, veladas a la luz de las velas y un servicio discreto crean momentos que se sienten sin esfuerzo pero profundamente memorables.',
-    'editorial.p5': 'Entre la selva y el mar, El Murmullo le invita a desacelerar, escuchar y reconectar con la naturaleza, con el silencio y con usted mismo. Nada aquí se impone. Todo susurra.',
+    'editorial.p1': 'Con vista a la bahía de Zihuatanejo, El Murmullo es un refugio privado donde la vegetación tropical, la luz del mar y la arquitectura refinada crean una sensación de calma.',
+    'editorial.p2': 'Concebido como una extensión de La Casa Que Canta, el lugar ofrece una colección íntima de villas diseñadas para privacidad, confort y estancias personalizadas.',
+    'editorial.p3': 'La elegancia náutica mediterránea se une al carácter costero mexicano mediante materiales naturales, espacios abiertos e interiores que reciben brisa, luz y silencio.',
+    'editorial.p4': 'La vida aquí fluye entre selva y océano: terrazas sombreadas, albercas privadas y vistas panorámicas invitan al descanso de la mañana al atardecer.',
+    'editorial.p5': 'Con servicio discreto, cocina cuidada y lujo sobrio, El Murmullo brinda una experiencia serena, exclusiva y profundamente personal.',
   },
 } as const;
 

@@ -153,7 +153,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
               {currentLang === 'es' ? 'Inicio' : 'Home'}
             </a>
             {/* Navigation Desktop */}
-            <nav className="hidden items-center gap-8 text-sm font-bold lg:flex ml-20">
+            <nav className="hidden items-center gap-8 text-base xl:text-[1.05rem] font-bold lg:flex ml-20">
               {links.map((link) => (
                 <div
                   key={link.href}
@@ -164,10 +164,16 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="group relative pb-1 uppercase tracking-wider transition-colors text-ink hover:text-ink/70"
+                    className={`group relative pb-1 uppercase tracking-wider transition-colors ${
+                      link.hasMegamenu ? "text-[#007CAA] hover:text-[#006a92]" : "text-ink hover:text-ink/70"
+                    }`}
                   >
                     {link.label}
-                    <span className="absolute inset-x-0 -bottom-1 h-[1px] scale-x-0 transition group-hover:scale-x-100 bg-ink/70"></span>
+                    <span
+                      className={`absolute inset-x-0 -bottom-1 h-[1px] scale-x-0 transition group-hover:scale-x-100 ${
+                        link.hasMegamenu ? "bg-[#007CAA]/70" : "bg-ink/70"
+                      }`}
+                    ></span>
                   </a>
                   
                   {/* Megamenu pour Suites */}
@@ -257,7 +263,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
                 ? "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=es-MX&productcurrency=USD&room=MUR&rooms=1&src=24C"
                 : "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=MUR&rooms=1&src=24C"
               }
-              className="book-now-flash inline-flex items-center gap-2 rounded-full px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold uppercase transition-all hover:-translate-y-0.5 bg-[#007CAA] text-white hover:bg-[#006a92] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007CAA] whitespace-nowrap"
+              className="book-now-flash inline-flex items-center gap-2 rounded-full px-3 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base font-semibold uppercase transition-all hover:-translate-y-0.5 bg-[#007CAA] text-white hover:bg-[#006a92] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007CAA] whitespace-nowrap"
             >
               {bookNowText}
             </a>

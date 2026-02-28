@@ -18,7 +18,7 @@ export const suiteTranslations: Record<string, SuiteTranslation> = {
   "sra-tentacion": {
     tagline: "Suite insignia con brisas marinas panoramicas y luz intima.",
     description:
-      "Descubra la hermosa vista panoramica desde cualquier rincon de esta amplia suite. La elegante decoracion con muebles artesanales mexicanos realza los tonos gris azulado de los muros y la coleccion de espejos dorados decorados a mano. Relajese en el balcon, desayune en la terraza o refresquese en la plunge pool.",
+      "Disfrute vistas panoramicas al oceano desde cualquier rincon de esta amplia suite. La decoracion con muebles artesanales mexicanos y espejos dorados decorados a mano realza sus tonos gris azulado. Relajese en el balcon, desayune en la terraza o refresquese en la plunge pool.",
     guests: "2 personas",
     bed: "Plunge pool | Terraza de dos niveles | Bano de lujo",
     view: "Vista al oceano",
@@ -53,7 +53,7 @@ export const suiteTranslations: Record<string, SuiteTranslation> = {
     displayTitle: "Suite Jardin Sueno Guajiro",
     tagline: "Un refugio sereno entre verdes tropicales y sombra suave.",
     description:
-      "Amplia suite privada con terraza rodeada de un intimo jardin tropical con camastros junto a una plunge pool frente al oceano. Decorada en tonos gris verdoso y plateados, con mobiliario tradicional de estilo hacienda mexicana y escritorio con vista al oceano.",
+      "Amplia suite privada con terraza, jardin tropical y camastros junto a una plunge pool frente al oceano. Decorada en tonos gris verdoso y plateados, con mobiliario tradicional estilo hacienda mexicana y escritorio con vista al mar.",
     guests: "2 personas",
     bed: "Plunge pool | Terraza de dos niveles | Bano de lujo",
     view: "Vista al oceano",
@@ -87,7 +87,7 @@ export const suiteTranslations: Record<string, SuiteTranslation> = {
   "junior-suite-senorita-surena": {
     tagline: "Luz suave del oceano en un interior elegante y aireado.",
     description:
-      "Ubicada en el primer piso, esta elegante suite decorada en tonos aqua blue ofrece doble vista a la bahia, decoracion mexicana contemporanea, finos cojines bordados a mano por artesanos chiapanecos, comodo escritorio y amplia terraza exterior.",
+      "Ubicada en el primer piso, esta elegante suite en tonos aqua blue ofrece doble vista a la bahia, decoracion mexicana contemporanea, cojines bordados a mano por artesanos chiapanecos, escritorio comodo y amplia terraza exterior.",
     guests: "2 personas",
     bed: "Plunge pool | Terraza de dos niveles | Bano de lujo",
     view: "Vista al oceano",
@@ -121,7 +121,7 @@ export const suiteTranslations: Record<string, SuiteTranslation> = {
   "junior-suite-senorita-sonrisa": {
     tagline: "Luz calida, texturas suaves y una sensacion ludica de calma.",
     description:
-      "Ubicada en el primer piso, esta acogedora suite en tonos terracota cuenta con doble vista a la bahia y una amplia terraza con plunge pool. Tambien incluye balcon, escritorio, banos dobles y objetos emblematicos representativos de la artesania mexicana.",
+      "Ubicada en el primer piso, esta acogedora suite en tonos terracota cuenta con doble vista a la bahia y amplia terraza con plunge pool. Tambien incluye balcon, escritorio, banos dobles y piezas emblematicas de artesania mexicana.",
     guests: "2 personas",
     bed: "Plunge pool | Terraza de dos niveles | Bano de lujo",
     view: "Vista al oceano",

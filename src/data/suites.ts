@@ -29,7 +29,7 @@ export const suites: Suite[] = [
     title: "Sra. Tentación",
     tagline: "Signature suite with panoramic sea breezes and intimate light.",
     description:
-      "Discover the beautiful panoramic view from any corner of this spacious suite. The elegant decor with Mexican handcrafted furniture enhances the greyish-blue tone of the walls and the collection of hand-decorated gold mirrors. Relax on the balcony, have breakfast on the terrace or refresh in the plunge pool.",
+      "Discover panoramic ocean views from every corner of this spacious suite. Mexican handcrafted furniture and hand-decorated gold mirrors elevate the greyish-blue decor. Relax on the balcony, breakfast on the terrace, or cool off in the plunge pool.",
     size: "140 m²",
     guests: "2 persons",
     bed: "Plunge pool | Two level terrace | Luxury bathroom",
@@ -88,7 +88,7 @@ export const suites: Suite[] = [
     displayTitle: "Garden Suite Sueño Guajiro",
     tagline: "A calm hideaway wrapped in tropical greens and soft shade.",
     description:
-      "Spacious private suite with terrace surrounded by an intimate tropical garden with lounge chairs next to a plunge pool facing the ocean. Decorated in greyish-green and silvery tones with traditional Mexican hacienda style furniture and a desk with ocean views.",
+      "Spacious private suite with terrace, tropical garden, and lounge chairs beside an ocean-facing plunge pool. Decorated in greyish-green and silvery tones with traditional Mexican hacienda style furniture and a desk with ocean views.",
     size: "110 m²",
     guests: "2 persons",
     bed: "Plunge pool | Two level terrace | Luxury bathroom",
@@ -146,7 +146,7 @@ export const suites: Suite[] = [
     title: "Junior Suite Señorita Surena",
     tagline: "Soft ocean light meets an elegant, airy interior.",
     description:
-      "Located on the first floor, this elegant Suite decorated in aqua blue color, has a double bay view, a representative contemporary Mexican decoration, fine cushions hand-embroidered by Chiapas craftsmen, comfortable desk and outdoor ample terrace.",
+      "Located on the first floor, this elegant aqua-blue suite offers a double bay view, contemporary Mexican decor, hand-embroidered Chiapas cushions, a comfortable desk, and a spacious outdoor terrace.",
     size: "75 m²",
     guests: "2 persons",
     bed: "Plunge pool | Two level terrace | Luxury bathroom",
@@ -204,7 +204,7 @@ export const suites: Suite[] = [
     title: "Junior Suite Señorita Sonrisa",
     tagline: "Warm light, soft textures, and a playful sense of ease.",
     description:
-      "Situated on the first floor, this terracotta cozy Suite has double views of the bay and a wide terrace with Plunge pool. It also has a balcony, desk, double bathrooms and emblematic objects representative of Mexican crafts.",
+      "Situated on the first floor, this cozy terracotta suite has double bay views and a wide terrace with plunge pool. It also includes a balcony, desk, double bathrooms, and emblematic pieces of Mexican craftsmanship.",
     size: "75 m²",
     guests: "2 persons",
     bed: "Plunge pool | Two level terrace | Luxury bathroom",

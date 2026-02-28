@@ -136,7 +136,7 @@ export default function HeroSlider({ lang = 'en' }: HeroSliderProps) {
               {slides[activeIndex].title}
             </h1>
           )}
-          <p className="max-w-xl text-base sm:text-lg text-white/90 font-bold leading-relaxed">
+          <p className="max-w-xl text-[1.15rem] sm:text-[1.29rem] text-white/90 font-bold leading-relaxed">
             {slides[activeIndex].caption}
           </p>
         </div>

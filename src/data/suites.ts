@@ -80,7 +80,7 @@ export const suites: Suite[] = [
       "Luxury herbal toiletries",
       "Cotton pique bathrobes",
       "Double-sink bathrooms",
-      "Flat screen TV, DVD and SKY TV",
+      "Flat screen TV, SKY TV",
     ],
   },
   {
@@ -139,7 +139,7 @@ export const suites: Suite[] = [
       "Luxury herbal toiletries",
       "Cotton pique bathrobes",
       "Double-sink bathrooms",
-      "Flat screen TV, DVD and SKY TV",
+      "Flat screen TV, SKY TV",
     ],
   },
   {
@@ -197,7 +197,7 @@ export const suites: Suite[] = [
       "Luxury herbal toiletries",
       "Cotton pique bathrobes",
       "Double-sink bathrooms",
-      "Flat screen TV, DVD and SKY TV",
+      "Flat screen TV, SKY TV",
     ],
   },
   {
@@ -255,7 +255,7 @@ export const suites: Suite[] = [
       "Luxury herbal toiletries",
       "Cotton pique bathrobes",
       "Double-sink bathrooms",
-      "Flat screen TV, DVD and SKY TV",
+      "Flat screen TV, SKY TV",
     ],
   },
 ];

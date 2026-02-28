@@ -46,7 +46,7 @@ export const suiteTranslations: Record<string, SuiteTranslation> = {
       "Amenidades herbales de lujo",
       "Batas de algodon pique",
       "Banos con doble lavabo",
-      "TV de pantalla plana, DVD y SKY TV",
+      "TV de pantalla plana, SKY TV",
     ],
   },
   "garden-suite": {
@@ -81,7 +81,7 @@ export const suiteTranslations: Record<string, SuiteTranslation> = {
       "Amenidades herbales de lujo",
       "Batas de algodon pique",
       "Banos con doble lavabo",
-      "TV de pantalla plana, DVD y SKY TV",
+      "TV de pantalla plana, SKY TV",
     ],
   },
   "junior-suite-senorita-surena": {
@@ -115,7 +115,7 @@ export const suiteTranslations: Record<string, SuiteTranslation> = {
       "Amenidades herbales de lujo",
       "Batas de algodon pique",
       "Banos con doble lavabo",
-      "TV de pantalla plana, DVD y SKY TV",
+      "TV de pantalla plana, SKY TV",
     ],
   },
   "junior-suite-senorita-sonrisa": {
@@ -149,7 +149,7 @@ export const suiteTranslations: Record<string, SuiteTranslation> = {
       "Amenidades herbales de lujo",
       "Batas de algodon pique",
       "Banos con doble lavabo",
-      "TV de pantalla plana, DVD y SKY TV",
+      "TV de pantalla plana, SKY TV",
     ],
   },
 };

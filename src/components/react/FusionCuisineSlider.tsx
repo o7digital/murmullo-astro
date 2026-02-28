@@ -17,7 +17,7 @@ export default function FusionCuisineSlider({ lang = 'en' }: FusionCuisineSlider
   ];
   const MIN_ZOOM = 1;
   const MAX_ZOOM = 3;
-  const defaultZoom = 1.8;
+  const defaultZoom = 1.5;
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);

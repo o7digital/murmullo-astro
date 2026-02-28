@@ -39,7 +39,7 @@ const images = [
 const SLIDE_DURATION = 5000;
 
 export default function AboutSlider({ lang = "en" }: AboutSliderProps) {
-  const defaultZoom = 2.5;
+  const defaultZoom = 1.5;
   const strings = labels[lang] ?? labels.en;
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);

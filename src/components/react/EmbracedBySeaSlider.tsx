@@ -25,7 +25,7 @@ export default function EmbracedBySeaSlider({ lang = 'en' }: EmbracedBySeaSlider
       description: t['embraced.feature3.description'],
     },
   ];
-  const defaultZoom = 2.5;
+  const defaultZoom = 1.5;
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   const [zoom, setZoom] = useState(1);

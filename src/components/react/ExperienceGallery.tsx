@@ -69,7 +69,7 @@ type Props = {
 };
 
 export default function ExperienceGallery({ id }: Props) {
-  const defaultZoom = 2.5;
+  const defaultZoom = 1.5;
   const trackRef = useRef<HTMLDivElement | null>(null);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   const [zoom, setZoom] = useState(1);

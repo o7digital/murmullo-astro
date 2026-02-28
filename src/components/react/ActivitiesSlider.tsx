@@ -13,7 +13,7 @@ const images = [
 const SLIDE_DURATION = 5000;
 
 export default function ActivitiesSlider() {
-  const defaultZoom = 2.5;
+  const defaultZoom = 1.5;
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);

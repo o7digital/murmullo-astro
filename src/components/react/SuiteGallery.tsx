@@ -6,7 +6,7 @@ interface SuiteGalleryProps {
 }
 
 export default function SuiteGallery({ images, title }: SuiteGalleryProps) {
-  const defaultZoom = 2.5;
+  const defaultZoom = 1.5;
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [mainImage, setMainImage] = useState(images[0]);
   const [zoom, setZoom] = useState(1);

@@ -93,7 +93,7 @@ export const ui = {
     // Editorial Intro
     'editorial.title': 'About El Murmullo',
     'editorial.intro': 'A sanctuary that whispers, between jungle and sea.',
-    'editorial.p1': 'Overlooking the bay of Zihuatanejo, El Murmullo is a private retreat where tropical vegetation, sea light, and refined architecture create a calm sense of place.',
+    'editorial.p1': 'Overlooking the bay of Zihuatanejo, El Murmullo is a private retreat where natural vegetation, sea light, and refined architecture create a calm sense of place.',
     'editorial.p2': 'Conceived as an extension of La Casa Que Canta, the property offers an intimate collection of villas designed for privacy, comfort, and personalized stays.',
     'editorial.p3': 'Mediterranean nautical elegance meets Mexican coastal character through natural materials, open spaces, and interiors that welcome breeze, light, and silence.',
     'editorial.p4': 'Daily life flows gently between jungle and ocean: shaded terraces, private pools, and panoramic views invite rest from morning to sunset.',
@@ -186,7 +186,7 @@ export const ui = {
     // Editorial Intro
     'editorial.title': 'Sobre El Murmullo',
     'editorial.intro': 'Un santuario que susurra, entre la selva y el mar.',
-    'editorial.p1': 'Con vista a la bahía de Zihuatanejo, El Murmullo es un refugio privado donde la vegetación tropical, la luz del mar y la arquitectura refinada crean una sensación de calma.',
+    'editorial.p1': 'Con vista a la bahía de Zihuatanejo, El Murmullo es un refugio privado donde la vegetación natural, la luz del mar y la arquitectura refinada crean una sensación de calma.',
     'editorial.p2': 'Concebido como una extensión de La Casa Que Canta, el lugar ofrece una colección íntima de villas diseñadas para privacidad, confort y estancias personalizadas.',
     'editorial.p3': 'La elegancia náutica mediterránea se une al carácter costero mexicano mediante materiales naturales, espacios abiertos e interiores que reciben brisa, luz y silencio.',
     'editorial.p4': 'La vida aquí fluye entre selva y océano: terrazas sombreadas, albercas privadas y vistas panorámicas invitan al descanso de la mañana al atardecer.',

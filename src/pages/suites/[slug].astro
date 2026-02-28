@@ -19,6 +19,9 @@ const description = suite.description;
 const defaultBookingUrl =
   "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=en-US&productcurrency=USD&room=MUR&rooms=1&src=24C";
 const bookingUrl = suite.bookingUrl ?? defaultBookingUrl;
+const suiteImages = Array.from(
+  new Set([suite.heroImage, ...suite.details.map((detail) => detail.image), ...suite.gallery])
+);
 ---
 
 <BaseLayout
@@ -75,7 +78,7 @@ const bookingUrl = suite.bookingUrl ?? defaultBookingUrl;
         <div class="lg:sticky lg:top-24 self-start">
           <SuiteGallery 
             client:visible
-            images={[suite.heroImage, ...suite.details.map(d => d.image), ...suite.gallery]}
+            images={suiteImages}
             title={displayTitle}
           />
         </div>

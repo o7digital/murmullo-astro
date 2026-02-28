@@ -30,7 +30,7 @@ export const suites: Suite[] = [
     tagline: "Signature suite with panoramic sea breezes and intimate light.",
     description:
       "The ultimate luxury suite with premium finishes, curated textures, and a private terrace designed for slow mornings and golden-hour rituals.",
-    size: "55 m²",
+    size: "140 m²",
     guests: "2-3 guests",
     bed: "King bed + lounge area",
     view: "Pacific panorama",

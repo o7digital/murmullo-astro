@@ -26,26 +26,30 @@ const navLinks = {
 const suites = [
   {
     title: "Sra. Tentación",
+    slug: "sra-tentacion",
     image: "/images/suites/sra-tentacion/exclusive-boutique-villa-hotel-zihuatanejo-ixtapa-mexico-01.webp",
-    size: "55 m²",
-    guests: "2-3 guests",
+    size: "1,500 ft² | 140 m²",
+    guests: "2 guests",
   },
   {
     title: "Garden Suite",
+    slug: "garden-suite",
     image: "/images/suites/garden-suite/garden-1.webp",
-    size: "45 m²",
+    size: "1,184 ft² | 110 m²",
     guests: "2 guests",
   },
   {
-    title: "Junior Suite Señorita Surena",
+    title: "Junior Suite Serenata Sureña",
+    slug: "junior-suite-senorita-surena",
     image: "/images/suites/junior-suite-senerata-surena/junior-suite1.webp",
-    size: "38 m²",
+    size: "810 ft² | 75 m²",
     guests: "2 guests",
   },
   {
-    title: "Junior Suite Señorita Sonrisa",
+    title: "Junior Suite SEÑORITA SONRISA",
+    slug: "junior-suite-senorita-sonrisa",
     image: "/images/suites/junior-suite-senorita-sonrisa/suite-1.webp",
-    size: "40 m²",
+    size: "810 ft² | 75 m²",
     guests: "2 guests",
   },
 ];
@@ -188,7 +192,7 @@ export default function Header({ currentLang = 'en' }: HeaderProps) {
                           {suites.map((suite) => (
                             <a
                               key={suite.title}
-                              href={`${suiteBasePath}/${slugify(suite.title)}`}
+                              href={`${suiteBasePath}/${suite.slug ?? slugify(suite.title)}`}
                               className="group relative overflow-hidden rounded-2xl bg-ink shadow-lg"
                             >
                               <div className="aspect-[4/3] relative overflow-hidden">

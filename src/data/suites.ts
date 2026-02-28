@@ -13,6 +13,7 @@ export type Suite = {
   guests: string;
   bed: string;
   view: string;
+  specs?: string[];
   rate: string;
   rateOriginal?: string;
   bookingUrl?: string;
@@ -27,10 +28,11 @@ export type Suite = {
 export const suites: Suite[] = [
   {
     title: "Sra. Tentación",
+    displayTitle: "Penthouse Señora Tentación",
     tagline: "Signature suite with panoramic sea breezes and intimate light.",
     description:
-      "Discover panoramic ocean views from every corner of this spacious suite. Mexican handcrafted furniture and hand-decorated gold mirrors elevate the greyish-blue decor. Relax on the balcony, breakfast on the terrace, or cool off in the plunge pool.",
-    size: "140 m²",
+      "Discover the beautiful panoramic view from any corner of this spacious suite. The elegant décor with Mexican handcrafted furniture enhances the greyish-blue tone of the walls and the collection of hand-decorated gold mirrors. Relax on the balcony, have breakfast on the terrace or refresh in the plunge pool.",
+    size: "1,500 ft² | 140 m²",
     guests: "2 persons",
     bed: "Plunge pool | Two level terrace | Luxury bathroom",
     view: "Ocean view",
@@ -78,21 +80,28 @@ export const suites: Suite[] = [
       "Welcome guacamole and tequila",
       "Housekeeping twice a day",
       "Luxury herbal toiletries",
-      "Cotton pique bathrobes",
+      "Cotton piqué bathrobes",
       "Double-sink bathrooms",
       "Flat screen TV, SKY TV",
     ],
   },
   {
     title: "Garden Suite",
-    displayTitle: "Garden Suite Sueño Guajiro",
+    displayTitle: "Garden Suite SUEÑO GUAJIRO",
     tagline: "A calm hideaway wrapped in tropical greens and soft shade.",
     description:
       "Spacious private suite with terrace, tropical garden, and lounge chairs beside an ocean-facing plunge pool. Decorated in greyish-green and silvery tones with traditional Mexican hacienda style furniture and a desk with ocean views.",
-    size: "110 m²",
+    size: "1,184 ft² | 110 m²",
     guests: "2 persons",
-    bed: "Plunge pool | Two level terrace | Luxury bathroom",
-    view: "Ocean view",
+    bed: "King - Size bed",
+    view: "Ocean View and garden view",
+    specs: [
+      "King - Size bed",
+      "Ocean View and garden view",
+      "Terrace",
+      "En-suite living room",
+      "Plunge pool",
+    ],
     rate: "$890",
     rateOriginal: "$1,050",
     bookingUrl:
@@ -137,17 +146,18 @@ export const suites: Suite[] = [
       "Welcome guacamole and tequila",
       "Housekeeping twice a day",
       "Luxury herbal toiletries",
-      "Cotton pique bathrobes",
+      "Cotton piqué bathrobes",
       "Double-sink bathrooms",
       "Flat screen TV, SKY TV",
     ],
   },
   {
     title: "Junior Suite Señorita Surena",
+    displayTitle: "Junior Suite Serenata Sureña",
     tagline: "Soft ocean light meets an elegant, airy interior.",
     description:
-      "Located on the first floor, this elegant aqua-blue suite offers a double bay view, contemporary Mexican decor, hand-embroidered Chiapas cushions, a comfortable desk, and a spacious outdoor terrace.",
-    size: "75 m²",
+      "Located on the first floor, this elegant Suite decorated in aqua blue color, has a double bay view, a representative contemporary Mexican decoration, fine cushions hand-embroidered by Chiapas craftsmen, comfortable desk and outdoor ample terrace.",
+    size: "810 ft² | 75 m²",
     guests: "2 persons",
     bed: "Plunge pool | Two level terrace | Luxury bathroom",
     view: "Ocean view",
@@ -195,17 +205,18 @@ export const suites: Suite[] = [
       "Welcome guacamole and tequila",
       "Housekeeping twice a day",
       "Luxury herbal toiletries",
-      "Cotton pique bathrobes",
+      "Cotton piqué bathrobes",
       "Double-sink bathrooms",
       "Flat screen TV, SKY TV",
     ],
   },
   {
     title: "Junior Suite Señorita Sonrisa",
+    displayTitle: "Junior Suite SEÑORITA SONRISA",
     tagline: "Warm light, soft textures, and a playful sense of ease.",
     description:
       "Situated on the first floor, this cozy terracotta suite has double bay views and a wide terrace with plunge pool. It also includes a balcony, desk, double bathrooms, and emblematic pieces of Mexican craftsmanship.",
-    size: "75 m²",
+    size: "810 ft² | 75 m²",
     guests: "2 persons",
     bed: "Plunge pool | Two level terrace | Luxury bathroom",
     view: "Ocean view",
@@ -253,7 +264,7 @@ export const suites: Suite[] = [
       "Welcome guacamole and tequila",
       "Housekeeping twice a day",
       "Luxury herbal toiletries",
-      "Cotton pique bathrobes",
+      "Cotton piqué bathrobes",
       "Double-sink bathrooms",
       "Flat screen TV, SKY TV",
     ],

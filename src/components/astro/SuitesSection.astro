@@ -10,31 +10,35 @@ const { id } = Astro.props as Props;
 const suites = [
   {
     title: "Garden Suite",
+    slug: "garden-suite",
     image: "/images/suites/garden-suite/garden-1.webp",
     description: "Immerse yourself in nature with our Garden Suite, featuring a private terrace and lush tropical views.",
-    size: "45 m²",
+    size: "1,184 ft² | 110 m²",
     guests: "2 guests",
   },
   {
-    title: "Junior Suite Señorita Surena",
+    title: "Junior Suite Serenata Sureña",
+    slug: "junior-suite-senorita-surena",
     image: "/images/suites/junior-suite-senerata-surena/junior-suite1.webp",
     description: "Elegant and spacious junior suite with modern amenities and stunning ocean glimpses.",
-    size: "38 m²",
+    size: "810 ft² | 75 m²",
     guests: "2 guests",
   },
   {
-    title: "Junior Suite Señorita Sonrisa",
+    title: "Junior Suite SEÑORITA SONRISA",
+    slug: "junior-suite-senorita-sonrisa",
     image: "/images/suites/junior-suite-senorita-sonrisa/suite-1.webp",
     description: "A bright and welcoming suite designed for comfort and relaxation.",
-    size: "40 m²",
+    size: "810 ft² | 75 m²",
     guests: "2 guests",
   },
   {
     title: "Sra. Tentación",
+    slug: "sra-tentacion",
     image: "/images/suites/sra-tentacion/suite-1.webp",
     description: "The ultimate luxury suite with premium finishes and exclusive amenities.",
-    size: "55 m²",
-    guests: "2-3 guests",
+    size: "1,500 ft² | 140 m²",
+    guests: "2 guests",
   },
 ];
 ---
@@ -52,7 +56,7 @@ const suites = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {suites.map((suite) => (
         <a
-          href={`/suites/${slugify(suite.title)}`}
+          href={`/suites/${suite.slug ?? slugify(suite.title)}`}
           class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
         >
           <div class="aspect-[3/4] relative overflow-hidden">

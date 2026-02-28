@@ -10,6 +10,7 @@ type SuiteTranslation = {
   guests: string;
   bed: string;
   view: string;
+  specs?: string[];
   details: SuiteDetailTranslation[];
   amenities: string[];
 };
@@ -18,7 +19,7 @@ export const suiteTranslations: Record<string, SuiteTranslation> = {
   "sra-tentacion": {
     tagline: "Suite insignia con brisas marinas panoramicas y luz intima.",
     description:
-      "Disfrute vistas panoramicas al oceano desde cualquier rincon de esta amplia suite. La decoracion con muebles artesanales mexicanos y espejos dorados decorados a mano realza sus tonos gris azulado. Relajese en el balcon, desayune en la terraza o refresquese en la plunge pool.",
+      "Descubra la hermosa vista panoramica desde cualquier rincon de esta amplia suite. La elegante decoracion con muebles artesanales mexicanos realza el tono gris azulado de los muros y la coleccion de espejos dorados decorados a mano. Relajese en el balcon, desayune en la terraza o refresquese en la plunge pool.",
     guests: "2 personas",
     bed: "Plunge pool | Terraza de dos niveles | Bano de lujo",
     view: "Vista al oceano",
@@ -50,13 +51,20 @@ export const suiteTranslations: Record<string, SuiteTranslation> = {
     ],
   },
   "garden-suite": {
-    displayTitle: "Suite Jardin Sueno Guajiro",
+    displayTitle: "Garden Suite SUENO GUAJIRO",
     tagline: "Un refugio sereno entre verdes tropicales y sombra suave.",
     description:
       "Amplia suite privada con terraza, jardin tropical y camastros junto a una plunge pool frente al oceano. Decorada en tonos gris verdoso y plateados, con mobiliario tradicional estilo hacienda mexicana y escritorio con vista al mar.",
     guests: "2 personas",
-    bed: "Plunge pool | Terraza de dos niveles | Bano de lujo",
-    view: "Vista al oceano",
+    bed: "Cama King size",
+    view: "Vista al oceano y al jardin",
+    specs: [
+      "Cama King size",
+      "Vista al oceano y al jardin",
+      "Terraza",
+      "Sala de estar en suite",
+      "Plunge pool",
+    ],
     details: [
       {
         label: "Cama",

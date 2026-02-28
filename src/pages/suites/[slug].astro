@@ -22,6 +22,7 @@ const bookingUrl = suite.bookingUrl ?? defaultBookingUrl;
 const suiteImages = Array.from(
   new Set([suite.heroImage, ...suite.details.map((detail) => detail.image), ...suite.gallery])
 );
+const suiteSpecs = suite.specs;
 ---
 
 <BaseLayout
@@ -90,9 +91,15 @@ const suiteImages = Array.from(
           {/* Détails de la suite */}
           <div class="mb-8 space-y-1 text-ink/80">
             <p class="text-base font-medium">{suite.size}</p>
-            <p class="text-sm">{suite.view}</p>
-            <p class="text-sm">{suite.guests}</p>
-            <p class="text-sm">{suite.bed}</p>
+            {suiteSpecs ? (
+              suiteSpecs.map((spec) => <p class="text-sm">{spec}</p>)
+            ) : (
+              <>
+                <p class="text-sm">{suite.view}</p>
+                <p class="text-sm">{suite.guests}</p>
+                <p class="text-sm">{suite.bed}</p>
+              </>
+            )}
           </div>
 
           {/* Description principale */}

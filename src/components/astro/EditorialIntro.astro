@@ -43,16 +43,16 @@ const paragraphs = [
   </div>
 
   <!-- Version Desktop : côte à côte -->
-  <div class="hidden lg:grid lg:grid-cols-[1fr,2fr] lg:h-screen lg:min-h-[700px]">
+  <div class="hidden lg:grid lg:grid-cols-[1fr,2fr] lg:min-h-screen lg:min-h-[700px]">
     <!-- Texte à gauche -->
     <div class="relative flex items-center bg-gradient-to-br from-sand to-mist/60 px-12">
-      <div class="w-full space-y-6">
-        <h2 class="text-2xl uppercase tracking-[0.10em] text-dusk font-semibold">{title}</h2>
-        <p class="text-5xl xl:text-6xl leading-[1.05] font-serif text-dusk">
+      <div class="w-full space-y-4 xl:space-y-5">
+        <h2 class="text-xl uppercase tracking-[0.10em] text-dusk font-semibold">{title}</h2>
+        <p class="text-4xl xl:text-5xl leading-[1.05] font-serif text-dusk">
           {intro}
         </p>
         {paragraphs.map((paragraph, index) => (
-          <p class="text-lg leading-relaxed text-ink/80" key={index}>{paragraph}</p>
+          <p class="text-base xl:text-[17px] leading-relaxed text-ink/80" key={index}>{paragraph}</p>
         ))}
       </div>
     </div>

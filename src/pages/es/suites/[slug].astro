@@ -32,6 +32,7 @@ const suiteInfo = {
   guests: suiteTranslation?.guests ?? suite.guests,
   bed: suiteTranslation?.bed ?? suite.bed,
 };
+const suiteSpecs = suiteTranslation?.specs ?? suite.specs;
 
 const suiteDetails = suite.details?.map((detail, index) => {
   const translatedDetail = suiteTranslation?.details?.[index];
@@ -107,9 +108,15 @@ const suiteAmenities = suiteTranslation?.amenities ?? suite.amenities;
           {/* Détails de la suite */}
           <div class="mb-8 space-y-1 text-ink/80">
             <p class="text-base font-medium">{suiteInfo.size}</p>
-            <p class="text-sm">{suiteInfo.view}</p>
-            <p class="text-sm">{suiteInfo.guests}</p>
-            <p class="text-sm">{suiteInfo.bed}</p>
+            {suiteSpecs ? (
+              suiteSpecs.map((spec) => <p class="text-sm">{spec}</p>)
+            ) : (
+              <>
+                <p class="text-sm">{suiteInfo.view}</p>
+                <p class="text-sm">{suiteInfo.guests}</p>
+                <p class="text-sm">{suiteInfo.bed}</p>
+              </>
+            )}
           </div>
 
           <div class="space-y-6">

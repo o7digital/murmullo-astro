@@ -18,6 +18,7 @@ export type Suite = {
   rateOriginal?: string;
   bookingUrl?: string;
   bookingUrlEs?: string;
+  floorPlan?: string;
   heroImage: string;
   highlights: string[];
   details: SuiteDetail[];
@@ -43,6 +44,7 @@ export const suites: Suite[] = [
     bookingUrlEs:
       "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=es-MX&productcurrency=USD&room=PNT&rooms=1&src=24C",
     heroImage: "/images/suites/sra-tentacion/exclusive-boutique-villa-hotel-zihuatanejo-ixtapa-mexico-01.webp",
+    floorPlan: "/floorplans/fl-image-1.jpg",
     highlights: [
       "Private terrace with ocean horizon",
       "Handcrafted wood and stone finishes",
@@ -109,6 +111,7 @@ export const suites: Suite[] = [
     bookingUrlEs:
       "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=es-MX&productcurrency=USD&room=GAR&rooms=1&src=24C",
     heroImage: "/images/suites/garden-suite/garden-1.webp",
+    floorPlan: "/floorplans/fl-image-2.jpg",
     highlights: [
       "Garden-facing private terrace",
       "Natural light all day long",
@@ -168,6 +171,7 @@ export const suites: Suite[] = [
     bookingUrlEs:
       "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=es-MX&productcurrency=USD&room=JRS&rooms=1&src=24C",
     heroImage: "/images/suites/junior-suite-senerata-surena/junior-suite1.webp",
+    floorPlan: "/floorplans/fl-image-3.jpg",
     highlights: [
       "Panoramic windows with sea breeze",
       "Curated art and handpicked decor",
@@ -227,6 +231,7 @@ export const suites: Suite[] = [
     bookingUrlEs:
       "https://be.synxis.com/?adult=1&arrive=2025-12-26&chain=22402&child=0&currency=USD&depart=2025-12-27&hotel=78821&level=hotel&locale=es-MX&productcurrency=USD&room=JRS&rooms=1&src=24C",
     heroImage: "/images/suites/junior-suite-senorita-sonrisa/suite-1.webp",
+    floorPlan: "/floorplans/fl-image-4.jpg",
     highlights: [
       "Golden-hour light and airy interiors",
       "Private balcony seating",

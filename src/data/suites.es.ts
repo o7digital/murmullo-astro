@@ -10,6 +10,7 @@ type SuiteTranslation = {
   guests: string;
   bed: string;
   view: string;
+  floorPlan?: string;
   specs?: string[];
   details: SuiteDetailTranslation[];
   amenities: string[];

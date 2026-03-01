@@ -33,6 +33,7 @@ const suiteInfo = {
   bed: suiteTranslation?.bed ?? suite.bed,
 };
 const suiteSpecs = suiteTranslation?.specs ?? suite.specs;
+const floorPlanUrl = suiteTranslation?.floorPlan ?? suite.floorPlan;
 
 const suiteDetails = suite.details?.map((detail, index) => {
   const translatedDetail = suiteTranslation?.details?.[index];
@@ -121,8 +122,21 @@ const suiteAmenities = suiteTranslation?.amenities ?? suite.amenities;
 
           <div class="space-y-6">
             <div>
-              <h3 class="text-xl font-medium text-ink mb-3">Descripción</h3>
-              <p class="text-ink/70 leading-relaxed">{description}</p>
+            <h3 class="text-xl font-medium text-ink mb-3">Descripción</h3>
+            <p class="text-ink/70 leading-relaxed mb-6">{description}</p>
+            {floorPlanUrl && (
+              <div class="mb-10">
+                <a
+                  href={floorPlanUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-[#007CAA] hover:text-[#006494]"
+                >
+                  Ver plano de la habitación
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            )}
             </div>
 
             {suiteDetails.length > 0 && (

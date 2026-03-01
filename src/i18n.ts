@@ -80,9 +80,9 @@ export const ui = {
     'footer.newsletterDescription': 'Stay updated with exclusive villa offers',
     'footer.emailPlaceholder': 'Email address',
     'footer.subscribe': 'Subscribe',
-    'footer.copyright': '© La Casa que Canta. All CopyRights.',
+    'footer.copyright': '© La Casa Que Canta | Designed by o7digital',
     'footer.privacy': 'Privacy Notice',
-    'footer.madeBy': 'Made by o7 Digital',
+    'footer.madeBy': '',
     'footer.backToTop': 'Back to Top',
     
     // CTA
@@ -173,9 +173,9 @@ export const ui = {
     'footer.newsletterDescription': 'Manténgase al día con ofertas exclusivas de nuestras villas',
     'footer.emailPlaceholder': 'Correo electrónico',
     'footer.subscribe': 'Suscribirse',
-    'footer.copyright': '© La Casa que Canta. Todos los derechos reservados.',
+    'footer.copyright': '© La Casa Que Canta | Diseñado por o7digital',
     'footer.privacy': 'Aviso de Privacidad',
-    'footer.madeBy': 'Hecho por o7 Digital',
+    'footer.madeBy': '',
     'footer.backToTop': 'Volver arriba',
     
     // CTA

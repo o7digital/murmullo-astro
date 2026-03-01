@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { suites } from "@/data/suites";
 import { slugify } from "@/utils/slugify";
 import SuiteGallery from "@/components/react/SuiteGallery";
+import FloorPlanViewer from "@/components/react/FloorPlanViewer";
 
 
 export function getStaticPaths() {
@@ -107,15 +108,7 @@ const floorPlanUrl = suite.floorPlan;
           <p class="text-base text-ink/70 leading-relaxed mb-6">{suite.description}</p>
           {floorPlanUrl && (
             <div class="mb-10">
-              <a
-                href={floorPlanUrl}
-                target="_blank"
-                rel="noreferrer"
-                class="inline-flex items-center gap-2 text-sm font-semibold text-[#007CAA] hover:text-[#006494]"
-              >
-                View Floor Plan
-                <span aria-hidden="true">↗</span>
-              </a>
+              <FloorPlanViewer client:load image={floorPlanUrl} buttonLabel="View Floor Plan" description={`${displayTitle} floor plan`} />
             </div>
           )}
 

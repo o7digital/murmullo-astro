@@ -4,6 +4,7 @@ import { suites } from "@/data/suites";
 import { suiteTranslations } from "@/data/suites.es";
 import { slugify } from "@/utils/slugify";
 import SuiteGallery from "@/components/react/SuiteGallery";
+import FloorPlanViewer from "@/components/react/FloorPlanViewer";
 
 export function getStaticPaths() {
   return suites.map((suite) => ({
@@ -126,15 +127,7 @@ const suiteAmenities = suiteTranslation?.amenities ?? suite.amenities;
             <p class="text-ink/70 leading-relaxed mb-6">{description}</p>
             {floorPlanUrl && (
               <div class="mb-10">
-                <a
-                  href={floorPlanUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  class="inline-flex items-center gap-2 text-sm font-semibold text-[#007CAA] hover:text-[#006494]"
-                >
-                  Ver plano de la habitación
-                  <span aria-hidden="true">↗</span>
-                </a>
+                <FloorPlanViewer client:load image={floorPlanUrl} buttonLabel="Ver plano de la habitación" description={`${displayTitle} plano`} />
               </div>
             )}
             </div>

@@ -7,12 +7,44 @@ const description =
 const heroImage = "/images/hero/el-murmullo4.webp";
 const mapImage = "/images/hero/contact/el-murmullo-mapa.webp";
 const preloadImages = [heroImage, mapImage];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "El Murmullo",
+  description: description,
+  telephone: "+52 984 000 2024",
+  email: "reservations@murmullo.studio",
+  url: "https://murmullo.studio/es/contact",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Carretera Tulum-Boca Paila KM 7",
+    addressLocality: "Tulum",
+    addressRegion: "Quintana Roo",
+    postalCode: "77780",
+    addressCountry: "MX",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 20.121,
+    longitude: -87.461,
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Reservations",
+    availableLanguage: ["en", "es"],
+    areaServed: ["MX", "US", "CA"],
+  },
+};
 ---
 
 <BaseLayout
   title={title}
   description={description}
   ogImage={heroImage}
+  preloadImages={preloadImages}
+  structuredData={structuredData}
+>
   preloadImages={preloadImages}
 >
   <div class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">

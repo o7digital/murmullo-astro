@@ -2,10 +2,22 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const title = "Privacy Notice | El Murmullo";
-const description = "Privacy Notice and Data Protection Policy for El Murmullo Hotel";
+const description = "Privacy Notice and Data Protection Policy for El Murmullo Luxury Villa";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  description: description,
+  url: "https://murmullo.studio/privacy",
+  potentialAction: {
+    "@type": "ReadAction",
+    target: "https://murmullo.studio/privacy",
+  },
+};
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} structuredData={structuredData}>
   <!-- Header avec logo fixe -->
   <div id="header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
     <div class="relative bg-white/95 backdrop-blur-sm">
@@ -59,7 +71,7 @@ const description = "Privacy Notice and Data Protection Policy for El Murmullo H
             <ul class="list-disc pl-6 space-y-2 mb-4">
               <li>Our website, reservation system, and online forms</li>
               <li>Information sent or shared through our social media channels</li>
-              <li>Direct interactions at the hotel</li>
+              <li>Direct interactions at the resort</li>
             </ul>
             <p class="mb-4">This information may include:</p>
             <p>Contact details (name, address, email, phone number); reservation or stay details; information related to product or service purchases; nationality; passport or ID number, place and date of issue; history of previous stays; payment and tax information (including RFC or TAX ID); stay preferences; marketing and communication preferences; feedback or opinions; information about travel companions; and medical information you choose to share to enhance your stay.</p>
@@ -124,7 +136,7 @@ const description = "Privacy Notice and Data Protection Policy for El Murmullo H
             <p class="mb-2 font-semibold">CASACANTA ZIHUA S.A. de C.V.</p>
             <p class="space-y-2">
               📍 <strong>Fiscal address:</strong> Montes Urales 720, Floor 1, Office 1-A, Lomas de Chapultepec I Sección, Miguel Hidalgo, 11000, CDMX, Mexico<br>
-              📍 <strong>Hotel address:</strong> Camino Escénico a Playa La Ropa, Colonia La Ropa, 40880 Zihuatanejo, Gro., Mexico
+              📍 <strong>Resort address:</strong> Camino Escénico a Playa La Ropa, Colonia La Ropa, 40880 Zihuatanejo, Gro., Mexico
             </p>
           </section>
         </div>

@@ -25,6 +25,26 @@ const suiteImages = Array.from(
 );
 const suiteSpecs = suite.specs;
 const floorPlanUrl = suite.floorPlan;
+
+// Structured data for room/suite
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Accommodation",
+  name: displayTitle,
+  url: new URL(Astro.url.pathname, Astro.site).toString(),
+  description: description,
+  image: suiteImages.map((img) => new URL(img, Astro.site).toString()),
+  amenityFeature: (suiteSpecs || []).map((spec) => ({
+    "@type": "LocationFeatureSpecification",
+    name: spec,
+  })),
+  partOf: {
+    "@type": "LodgingBusiness",
+    name: "El Murmullo Luxury Villa",
+  },
+  petsAllowed: false,
+  currenciesAccepted: "USD, MXN",
+};
 ---
 
 <BaseLayout
@@ -32,6 +52,7 @@ const floorPlanUrl = suite.floorPlan;
   description={description}
   ogImage={suite.heroImage}
   preloadImages={[suite.heroImage]}
+  structuredData={structuredData}
 >
   <div class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
     <header class="container mx-auto flex items-center justify-between px-6 py-4 sm:px-10 sm:py-5">
@@ -57,9 +78,11 @@ const floorPlanUrl = suite.floorPlan;
     <div class="absolute inset-0">
       <img
         src={suite.heroImage}
-        alt={displayTitle}
+        alt={`${displayTitle} - Luxury Suite at El Murmullo`}
         class="h-full w-full object-cover"
         loading="eager"
+        decoding="async"
+        fetchpriority="high"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
     </div>

@@ -2,10 +2,22 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const title = "Aviso de Privacidad | El Murmullo";
-const description = "Aviso de Privacidad y Política de Protección de Datos de El Murmullo Hotel";
+const description = "Aviso de Privacidad y Política de Protección de Datos de El Murmullo Luxury Villa";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  description: description,
+  url: "https://murmullo.studio/es/privacy",
+  potentialAction: {
+    "@type": "ReadAction",
+    target: "https://murmullo.studio/es/privacy",
+  },
+};
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} structuredData={structuredData}>
   <!-- Header avec logo fixe -->
   <div id="header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
     <div class="relative bg-white/95 backdrop-blur-sm">
@@ -57,7 +69,7 @@ const description = "Aviso de Privacidad y Política de Protección de Datos de 
 
           <h2 class="text-2xl font-semibold text-ink mt-8 mb-4">Información que Recopilamos</h2>
           <p>
-            Recopilamos información personal que usted nos proporciona voluntariamente al hacer una reservación, registrarse en nuestro hotel, o comunicarse con nosotros. Esto puede incluir su nombre, dirección de correo electrónico, número de teléfono, información de pago y preferencias de estancia.
+            Recopilamos información personal que usted nos proporciona voluntariamente al hacer una reservación, registrarse en nuestro resort, o comunicarse con nosotros. Esto puede incluir su nombre, dirección de correo electrónico, número de teléfono, información de pago y preferencias de estancia.
           </p>
 
           <h2 class="text-2xl font-semibold text-ink mt-8 mb-4">Uso de la Información</h2>

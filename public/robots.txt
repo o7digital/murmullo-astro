@@ -1,0 +1,31 @@
+# El Murmullo Hotel - robots.txt
+# Gestion des crawlers pour SEO optimal
+
+# Allow all bots by default
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.env
+Disallow: /*.json
+Disallow: /*?*
+Allow: /*.js
+Allow: /*.css
+Allow: /*.webp
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+
+# Sitemaps
+Sitemap: https://murmullo.studio/sitemap-index.xml
+
+# Crawl delay (ms)
+Crawl-delay: 1
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
